@@ -46,7 +46,7 @@ ConscriptionNum <=
   | +[0-9] '/0' *[0-9]
   ) :(?(*Sep '.') ?(*Sep "hrsz" ?'.'))
 
-ConscriptionHrsz <= +[0-9] '/' +[0-9] :(?(*Sep '.') *Sep "hrsz" ?'.')
+ConscriptionHrsz <= +[0-9] ?('/' +[0-9] *('/' +BigSmallNum)) :(?(*Sep '.') *Sep "hrsz" ?'.')
 
 Locator <- +BigSmallNum ?(+[ \t.] "számú") +[ \t.] ("üzlet" | "pavilon")
 

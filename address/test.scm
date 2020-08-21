@@ -28,6 +28,12 @@
 "Ág 500. út"
 (Addr (CTownStreet (CTown #\Á#\g) (CStreet #\5#\0#\0#\.)) (Type #\ú#\t))
 
+"Bő Ó út 1 2345/6/A/7 hrsz"
+(Addr (CTownStreet (CTown #\B#\ő) (CStreet #\Ó)) (Type #\ú#\t) (Number (HouseNumber #\1) (ConscriptionHrsz #\2#\3#\4#\5#\/#\6#\/#\A#\/#\7)))
+
+"Sé Ó út 1234 hrsz"
+(Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (Type #\ú#\t) (ConscriptionHrsz #\1#\2#\3#\4))
+
 "Sé Ó út 1 - 3 szám 2345/6 hrsz"
 (Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (Type #\ú#\t) (Number (HouseNumber #\1#\-#\3) (ConscriptionHrsz #\2#\3#\4#\5#\/#\6)))
 
