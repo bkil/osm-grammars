@@ -19,4 +19,13 @@
 "Őr I. út 2956/3"
 (Addr (CTownStreet (CTown #\Ő#\r) (CStreet #\I#\.)) (Type #\ú#\t) (ConscriptionNum #\2#\9#\5#\6#\/#\3))
 
+"Ág Erzsébet-kilátó út 4"
+(Addr (CTownStreet (CTown #\Á#\g) (CStreet #\E#\r#\z#\s#\é#\b#\e#\t#\-#\k#\i#\l#\á#\t#\ó)) (Type #\ú#\t) (HouseNumber #\4))
+
+"Ág Sok útadó utca 1"
+(Addr (CTownStreet (CTown #\Á#\g) (CStreet #\S#\o#\k#\ #\ú#\t#\a#\d#\ó)) (Type #\u#\t#\c#\a) (HouseNumber #\1))
+
+"Ág 500. út"
+(Addr (CTownStreet (CTown #\Á#\g) (CStreet #\5#\0#\0#\.)) (Type #\ú#\t))
+
 )
