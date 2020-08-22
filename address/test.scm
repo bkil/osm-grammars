@@ -1,8 +1,11 @@
 ; whatever
 (Addr
 
-"9999 2483 2483 GárdonyBalatoni utca 1/a 2. em 3. ajtó V2 üzlet"
-(Addr (Postcode #\2#\4#\8#\3) (CTownStreet (CTown #\G#\á#\r#\d#\o#\n#\y) (CStreet #\B#\a#\l#\a#\t#\o#\n#\i)) (Type #\u#\t#\c#\a) (House (HouseNumber #\1 #\/ #\a) (LevelN #\2) (DoorN #\3)) (Locator #\V#\2#\ #\ü#\z#\l#\e#\t))
+"9999 2483 2483 Gárdony Balatoni utca 1/a. 2. emelet 3. ajtó V2 üzlet"
+(Addr (Postcode #\2#\4#\8#\3) (CTownStreet (CTown #\G#\á#\r#\d#\o#\n#\y) (CStreet #\B#\a#\l#\a#\t#\o#\n#\i)) (Type #\u#\t#\c#\a) (House (HouseNumber #\1 #\/ #\a) (LevelN #\2) (DoorN #\3)) (Locator #\V#\2 (LocatorType #\ü#\z#\l#\e#\t)))
+
+"9999 2483 2483GárdonyBalatoni utca1/a2em3ajtóV2üzlet"
+(Addr (Postcode #\2#\4#\8#\3) (CTownStreet (CTown #\G#\á#\r#\d#\o#\n#\y) (CStreet #\B#\a#\l#\a#\t#\o#\n#\i)) (Type #\u#\t#\c#\a) (House (HouseNumber #\1 #\/ #\a) (LevelN #\2) (DoorN #\3)) (Locator #\V#\2 (LocatorType #\ü#\z#\l#\e#\t)))
 
 "Őr Fő út 9. 2956/3 hrsz"
 (Addr (CTownStreet (CTown #\Ő#\r) (CStreet #\F#\ő)) (Type #\ú#\t) (Number (HouseNumber #\9) (ConscriptionHrsz #\2#\9#\5#\6#\/#\3)))
