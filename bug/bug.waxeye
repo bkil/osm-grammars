@@ -1,0 +1,10 @@
+A <- B *'a' 'x'
+
+# Dirty workaround:
+B <- ?(?'a' *'a' 'b')
+
+# This should also work:
+# B <- ?(*'a' 'b')
+
+# Dirtier workaround:
+# B <- ?(&(*'a' 'b') *'a' 'b')
