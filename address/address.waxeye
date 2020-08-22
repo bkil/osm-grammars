@@ -1,4 +1,11 @@
-Addr <- ?FakePostcode ?(*(RepeatedPostcode +Seps) LastPostcode *Seps) TownStreet ?(+Sep Type) *Seps ?(Number ?(*Sep Locator))
+# Stable Waxeye seems to have a bug around `?(*X ...)`,
+# so I replaced it with  `?(?X *X ...)`.
+# Don't forget to follow nonterminals when you are checking against this.
+
+Addr <-
+  ?FakePostcode ?(?(RepeatedPostcode +Seps) *(RepeatedPostcode +Seps) LastPostcode *Seps)
+  TownStreet ?(+Sep Type) *Seps
+  ?(Number ?(?Sep *Sep Locator))
 
 FakePostcode <: '9999' +Seps
 
@@ -32,7 +39,11 @@ Km <- [1-9] *[0-9] :('.' *Sep "km")
 
 House <= HouseNumber ?(+Sepd Level) ?(+Sepd Door) :(?'.')
 
-HouseNumber <- [1-9] ?[0-9] ?[0-9] ?(?Sep '-' *Sep [1-9] ?[0-9] ?[0-9]) ?(?Sep '/' *Sep ([A-Za-z] | [1-9] | [1-9][0-9])) :(?(+Sepd "szám"))
+HouseNumber <-
+  [1-9] ?[0-9] ?[0-9]
+  ?(?Sep *Sep '-' *Sep [1-9] ?[0-9] ?[0-9])
+  ?(?Sep *Sep '/' *Sep ([A-Za-z] | [1-9] | [1-9][0-9]))
+  :(?(+Sepd "szám"))
 
 Level <= Ground | LevelN :(? '.' *Sep "em" ?"elet" ?'.')
 Ground <- ("fsz" ? "t" | "földszint") ?'.'
@@ -48,9 +59,11 @@ ConscriptionNum <=
   | +[0-9] '/' [0-9][0-9] +[0-9]
   | '0' *[0-9] '/' +[0-9]
   | +[0-9] '/0' *[0-9]
-  ) :(?(*Sep '.') ?(*Sep "hrsz" ?'.'))
+  ) :(?(?Sep *Sep '.') ?(?Sep *Sep "hrsz" ?'.'))
 
-ConscriptionHrsz <= +[0-9] ?('/' +[0-9] *('/' +BigSmallNum)) :(?(*Sep '.') *Sep "hrsz" ?'.')
+ConscriptionHrsz <=
+  +[0-9] ?('/' +[0-9] *('/' +BigSmallNum))
+  :(?(?Sep *Sep '.') *Sep "hrsz" ?'.')
 
 Locator <- +BigSmallNum ?(+[ \t.] "számú") +[ \t.] ("üzlet" | "pavilon")
 
