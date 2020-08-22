@@ -35,34 +35,34 @@ Number <=
   | House ?(+Sep Conscription)
   | :('(') Conscription :(')') *Sep House
 
-Km <- [1-9] *[0-9] :('.' *Sep "km")
+Km <- [1-9] *Num :('.' *Sep "km")
 
 House <= HouseNumber ?(+Sepd Level) ?(+Sepd Door) :(?'.')
 
 HouseNumber <-
-  [1-9] ?[0-9] ?[0-9]
-  ?(?Sep *Sep '-' *Sep [1-9] ?[0-9] ?[0-9])
-  ?(?Sep *Sep '/' *Sep ([A-Za-z] | [1-9] | [1-9][0-9]))
+  [1-9] ?Num ?Num
+  ?(?Sep *Sep '-' *Sep [1-9] ?Num ?Num)
+  ?(?Sep *Sep '/' *Sep ([A-Za-z] | [1-9] | [1-9]Num))
   :(?(+Sepd "szám"))
 
 Level <= Ground | LevelN :(? '.' *Sep "em" ?"elet" ?'.')
 Ground <- ("fsz" ? "t" | "földszint") ?'.'
-LevelN <- +[0-9]
+LevelN <- +Num
 
 Door <= DoorN :(?'.' *Sep "ajtó")
-DoorN <- +[0-9]
+DoorN <- +Num
 
 Conscription <= ConscriptionHrsz | ConscriptionNum
 
 ConscriptionNum <=
-  ( [0-9][0-9][0-9] +[0-9] '/' +[0-9]
-  | +[0-9] '/' [0-9][0-9] +[0-9]
-  | '0' *[0-9] '/' +[0-9]
-  | +[0-9] '/0' *[0-9]
+  ( Num Num Num +Num '/' +Num
+  | +Num '/' Num Num +Num
+  | '0' *Num '/' +Num
+  | +Num '/0' *Num
   ) :(?(?Sep *Sep '.') ?(?Sep *Sep "hrsz" ?'.'))
 
 ConscriptionHrsz <=
-  +[0-9] ?('/' +[0-9] *('/' +BigSmallNum))
+  +Num ?('/' +Num *('/' +BigSmallNum))
   :(?(?Sep *Sep '.') *Sep "hrsz" ?'.')
 
 Locator <- +BigSmallNum ?(+[ \t.] "számú") +[ \t.] ("üzlet" | "pavilon")
@@ -74,5 +74,6 @@ Sepn <= [ \t.-]
 Small <= [a-záíűőüöúóé]
 Big <= [A-ZÁÍŰŐÜÖÚÓÉ]
 BigSmall <= Big | Small
-BigSmallNum <= BigSmall | [0-9]
-BigNum <= Big | [0-9]
+BigSmallNum <= BigSmall | Num
+BigNum <= Big | Num
+Num <= [0-9]
