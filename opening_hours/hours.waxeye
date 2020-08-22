@@ -1,0 +1,15 @@
+SingleDay <= AllDay | HHMM Minus HHMM
+
+AllDay <- :(Zerop Colon Zerop Minus H24)
+
+HHMM <= H24 | Hour Colon Minute
+H24 <- Zeros :('24' Colon Zerop | '23' Colon Zeros '59')
+Hour <- Zeros (?'1' Dig | '2' [0-3])
+Minute <- Zeros ?[1-5] Dig
+
+Sep <: [ \t]
+Dig <= [0-9]
+Zeros <: *'0'
+Zerop <: +'0'
+Minus <: *Sep '-' *Sep
+Colon <: *Sep ':' *Sep
