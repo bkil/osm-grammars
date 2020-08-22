@@ -67,7 +67,8 @@ ConscriptionHrsz <=
   +Num ?('/' +Num *('/' +BigSmallNum))
   :(?(?Sep *Sep '.') *Sep "hrsz" ?'.')
 
-Locator <- +BigSmallNum ?(+[ \t.] "számú") +[ \t.] ("üzlet" | "pavilon")
+Locator <- +(!LocatorType BigSmallNum) :(?(+[ \t.] "számú")) *Sepd LocatorType
+LocatorType <= "üzlet" | "pavilon"
 
 Sep <: [ \t]
 Sepd <: Sep | '.'
