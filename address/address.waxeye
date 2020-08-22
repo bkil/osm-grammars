@@ -1,6 +1,6 @@
 Addr <- ?FakePostcode ?(*(RepeatedPostcode +Seps) LastPostcode *Seps) TownStreet ?(+Sep Type) *Seps ?(Number ?(*Sep Locator))
 
-FakePostcode <: "9999" +Seps
+FakePostcode <: '9999' +Seps
 
 RepeatedPostcode <: Postcode &(+Seps Postcode)
 
@@ -15,14 +15,18 @@ UTownStreet <= UTown +Seps UStreet
 UTown <- Big +Big
 UStreet <- BigNum *BigNum *( +Sepn !(Type (Sep | !.)) +BigNum) ?'.'
 
-# Camel or lowercase town and street
+# Camelcase or lowercase town and street
 CTownStreet <= CTown *Seps CStreet
 CTown <- Big +Small
 CStreet <- BigNum *BigSmallNum *( +Sepn !(Type (Sep | !.)) +BigSmallNum) ?'.'
 
 Type <- "út" | "utca" | "főút"
 
-Number <= Km | Conscription | House ?(+Sep Conscription) | :("(") Conscription :(")") *Sep House
+Number <=
+  Km
+  | Conscription
+  | House ?(+Sep Conscription)
+  | :('(') Conscription :(')') *Sep House
 
 Km <- [1-9] *[0-9] :('.' *Sep "km")
 
