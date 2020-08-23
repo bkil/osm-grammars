@@ -25,13 +25,14 @@ UTown <- Big +Big
 UStreet <- BigNum *BigNum *( +Sepn NotTypeNumber +BigNum) ?'.'
 
 # Camelcase or lowercase town and street
-CTownStreet <= CTown *Seps CStreet
+CTownStreet <= CTown *Seps CStreet | CTown +Seps NCStreet
 CTown <- Big +Small
 CStreet <- BigNum *BigSmallNum *( +Sepn NotTypeNumber +BigSmallNum) ?'.'
+NCStreet <- +BigSmallNum *( +Sepn NotTypeNumber +BigSmallNum) ?'.'
 
 NotTypeNumber <= !(?(Type *Seps) NumberEnding !.)
 
-Type <- "út" | "utca" | "főút" | "sor" | "park" ?"ja"
+Type <- "út" | "utca" | "főút" | "sor" | "park" ?"ja" | "rakpart"
 
 Number <=
   Km

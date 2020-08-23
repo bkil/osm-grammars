@@ -73,4 +73,6 @@
 "Sé Széles Út utca 4"
 (Addr (CTownStreet (CTown #\S#\é) (CStreet #\S#\z#\é#\l#\e#\s#\ #\Ú#\t)) (Type #\u#\t#\c#\a) (HouseNumber #\4))
 
+"Sé gróf Esterházy János rakpart"
+(Addr (CTownStreet (CTown #\S#\é) (NCStreet #\g#\r#\ó#\f#\ #\E#\s#\t#\e#\r#\h#\á#\z#\y#\ #\J#\á#\n#\o#\s)) (Type #\r#\a#\k#\p#\a#\r#\t))
 )
