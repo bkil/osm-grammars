@@ -19,6 +19,9 @@
 "Őr 7-es főút 42. km"
 (Addr (CTownStreet (CTown #\Ő#\r) (CStreet #\7#\-#\e#\s)) (Type #\f#\ő#\ú#\t) (Km #\4#\2))
 
+"Őr 7-es út 42 km szelvény"
+(Addr (CTownStreet (CTown #\Ő#\r) (CStreet #\7#\-#\e#\s)) (Type #\ú#\t) (Km #\4#\2))
+
 "Őr I. út 2956/3"
 (Addr (CTownStreet (CTown #\Ő#\r) (CStreet #\I#\.)) (Type #\ú#\t) (ConscriptionNum #\2#\9#\5#\6#\/#\3))
 

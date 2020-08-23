@@ -39,7 +39,7 @@ Number <=
   | House ?(+Seps Conscription)
   | :('(') Conscription :(')') *Seps House
 
-Km <- [1-9] *Num :('.' *Sep "km")
+Km <- [1-9] *Num :(+Sepd "km" ?(?Sep *Sep "szelvény"))
 
 House <= HouseNumber ?(?Sepd *Sepd Level) ?(?Sepd *Sepd Door) :(?'.')
 
