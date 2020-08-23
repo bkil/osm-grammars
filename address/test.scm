@@ -40,4 +40,10 @@
 "Sé Ó út 1 - 3 szám 2345/6 hrsz"
 (Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (Type #\ú#\t) (Number (HouseNumber #\1#\-#\3) (ConscriptionHrsz #\2#\3#\4#\5#\/#\6)))
 
+"Sé Május 1. út 4"
+(Addr (CTownStreet (CTown #\S#\é) (CStreet #\M#\á#\j#\u#\s#\ #\1#\.)) (Type #\ú#\t) (HouseNumber #\4))
+
+"Sé 1. Ó út 4"
+(Addr (CTownStreet (CTown #\S#\é) (CStreet #\1#\.#\ #\Ó)) (Type #\ú#\t) (HouseNumber #\4))
+
 )

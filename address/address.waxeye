@@ -20,14 +20,14 @@ TownStreet <= UTownStreet | CTownStreet
 # Uppercase town and street
 UTownStreet <= UTown +Seps UStreet
 UTown <- Big +Big
-UStreet <- BigNum *BigNum *( NotType +BigNum) ?'.'
+UStreet <- BigNum *BigNum *( +Sepn NotType +BigNum) ?'.'
 
 # Camelcase or lowercase town and street
 CTownStreet <= CTown *Seps CStreet
 CTown <- Big +Small
-CStreet <- BigNum *BigSmallNum *( NotType +BigSmallNum) ?'.'
+CStreet <- BigNum *BigSmallNum *( +Sepn NotType +BigSmallNum) ?'.'
 
-NotType <= +Sepn !(Type (Seps | Num | !.))
+NotType <= !(Type (Seps | Num | !.))
 
 Type <- "út" | "utca" | "főút"
 
