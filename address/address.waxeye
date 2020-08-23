@@ -22,16 +22,16 @@ TownStreet <= UTownStreet | CTownStreet
 # Uppercase town and street
 UTownStreet <= UTown +Seps UStreet
 UTown <- Big +Big
-UStreet <- BigNum *BigNum *( +Sepn NotType +BigNum) ?'.'
+UStreet <- BigNum *BigNum *( +Sepn NotTypeNumber +BigNum) ?'.'
 
 # Camelcase or lowercase town and street
 CTownStreet <= CTown *Seps CStreet
 CTown <- Big +Small
-CStreet <- BigNum *BigSmallNum *( +Sepn NotType +BigSmallNum) ?'.'
+CStreet <- BigNum *BigSmallNum *( +Sepn NotTypeNumber +BigSmallNum) ?'.'
 
-NotType <= !(Type (Seps | Num | !.) | NumberEnding !.)
+NotTypeNumber <= !(?(Type *Seps) NumberEnding !.)
 
-Type <- "út" | "utca" | "főút"
+Type <- "út" | "utca" | "főút" | "sor" | "park" ?"ja"
 
 Number <=
   Km

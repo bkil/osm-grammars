@@ -55,4 +55,22 @@
 "Sé 1. Május 1 2 3 emelet 4 ajtó 5 üzlet"
 (Addr (CTownStreet (CTown #\S#\é) (CStreet #\1#\.#\ #\M#\á#\j#\u#\s#\ #\1)) (NumberEnding (House (HouseNumber #\2) (LevelN #\3) (DoorN #\4)) (Locator #\5 (LocatorType #\ü#\z#\l#\e#\t))))
 
+"Sé Park"
+(Addr (CTownStreet (CTown #\S#\é) (CStreet #\P#\a#\r#\k)))
+
+"Sé Strand"
+(Addr (CTownStreet (CTown #\S#\é) (CStreet #\S#\t#\r#\a#\n#\d)))
+
+"Sé Szabad Strand"
+(Addr (CTownStreet (CTown #\S#\é) (CStreet #\S#\z#\a#\b#\a#\d#\ #\S#\t#\r#\a#\n#\d)))
+
+"Sé Magasút utca 4"
+(Addr (CTownStreet (CTown #\S#\é) (CStreet #\M#\a#\g#\a#\s#\ú#\t)) (Type #\u#\t#\c#\a) (HouseNumber #\4))
+
+"Sé Út utca 4"
+(Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ú#\t)) (Type #\u#\t#\c#\a) (HouseNumber #\4))
+
+"Sé Széles Út utca 4"
+(Addr (CTownStreet (CTown #\S#\é) (CStreet #\S#\z#\é#\l#\e#\s#\ #\Ú#\t)) (Type #\u#\t#\c#\a) (HouseNumber #\4))
+
 )
