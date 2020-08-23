@@ -5,7 +5,9 @@
 Addr <-
   ?FakePostcode ?(?(RepeatedPostcode +Seps) *(RepeatedPostcode +Seps) LastPostcode *Seps)
   TownStreet ?(+Sep Type) *Seps
-  ?(Number ?(?Sep *Sep Locator))
+  NumberEnding
+
+NumberEnding <= ?(Number ?(?Sep *Sep Locator))
 
 FakePostcode <: '9999' +Seps
 
@@ -27,7 +29,7 @@ CTownStreet <= CTown *Seps CStreet
 CTown <- Big +Small
 CStreet <- BigNum *BigSmallNum *( +Sepn NotType +BigSmallNum) ?'.'
 
-NotType <= !(Type (Seps | Num | !.))
+NotType <= !(Type (Seps | Num | !.) | NumberEnding !.)
 
 Type <- "út" | "utca" | "főút"
 
