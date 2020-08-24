@@ -58,8 +58,10 @@ HouseNumber <-
   ?(?Sep *Sep '/' *Sep ([A-Za-z] | [1-9] | [1-9]Num))
   :(?(?Sepd *Sepd "sz" ('.' | "ám")))
 
-BuildingN <- (Num ?Num | Big) :('.' *Sep "ép" ?"ület" ?'.')
-StairsN <- (Roman | Big) :(?'.' *Sep ("lh" | "lph" | "lépcsőház") ?'.')
+BuildingN <- (Num ?Num | Big) BuildingSuf
+BuildingSuf <: '.' *Sep "ép" ?"ület" ?'.'
+StairsN <- (Roman | Big) StairsSuf
+StairsSuf <: ?'.' *Sep ("lh" | "lph" | "lépcsőház") ?'.'
 Level <= Ground | HighGround | LevelN LevelSuf | LevelR ?LevelSuf
 LevelSuf <: ?'.' *Sep "e" ?("m" ?"elet") ?'.'
 Ground <- :(("fsz" ?"t" | "földszint") ?'.')
