@@ -7,7 +7,7 @@ Addr <-
   TownStreet ?(+Sep Type) *Seps
   NumberEnding
 
-NumberEnding <= ?(Number ?(?Sep *Sep Locator))
+NumberEnding <= ?(Number ?(?Sep *Sep Locator)) *Seps
 
 FakePostcode <: '9999' +Seps
 
@@ -46,9 +46,13 @@ House <=
   HouseNumber
   ?(?Sepd *Sepd BuildingN)
   ?(?Sepd *Sepd StairsN)
-  ?(?Sepd *Sepd Level)
-  ?(?Sepd *Sepd DoorN DoorSuf)
+  ?LevelDoor
   :(?'.')
+
+LevelDoor <=
+  ?Sepd *Sepd Level *Sepd DoorN ?DoorSuf
+  | ?Sepd *Sepd LevelR *Sepd :(?'/') *Sep DoorN ?DoorSuf
+  | ?(?Sepd *Sepd Level) ?(?Sepd *Sepd DoorN DoorSuf)
 
 HouseNumber <-
   [1-9] ?Num ?Num
@@ -58,9 +62,11 @@ HouseNumber <-
 
 BuildingN <- (+Num | Big) :('.' *Sep "ép" ?"ület" ?'.')
 StairsN <- Big :(?'.' *Sep ("lph" | "lépcsőház") ?'.')
-Level <= Ground | LevelN :(?'.' *Sep "e" ?("m" ?"elet") ?'.')
-Ground <- :(("fsz" ? "t" | "földszint") ?'.')
-LevelN <- +Num | Roman
+Level <= Ground | LevelN LevelSuf | LevelR ?LevelSuf
+LevelSuf <: ?'.' *Sep "e" ?("m" ?"elet") ?'.'
+Ground <- :(("fsz" ?"t" | "földszint") ?'.')
+LevelN <- +Num
+LevelR <- Roman
 
 DoorN <- +Num
 DoorSuf <: ?'.' *Sep ("ajtó" | "sz" ?('.' | "ám"))

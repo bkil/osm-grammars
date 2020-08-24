@@ -2,10 +2,10 @@
 (Addr
 
 "9999 2483 2483 Gárdony Balatoni utca 1/a. 2. emelet 3. ajtó V2 üzlet"
-(Addr (Postcode #\2#\4#\8#\3) (CTownStreet (CTown #\G#\á#\r#\d#\o#\n#\y) (CStreet #\B#\a#\l#\a#\t#\o#\n#\i)) (Type #\u#\t#\c#\a) (NumberEnding (House (HouseNumber #\1 #\/ #\a) (LevelN #\2) (DoorN #\3)) (Locator #\V#\2 (LocatorType #\ü#\z#\l#\e#\t))))
+(Addr (Postcode #\2#\4#\8#\3) (CTownStreet (CTown #\G#\á#\r#\d#\o#\n#\y) (CStreet #\B#\a#\l#\a#\t#\o#\n#\i)) (Type #\u#\t#\c#\a) (NumberEnding (House (HouseNumber #\1 #\/ #\a) (LevelDoor (LevelN #\2) (DoorN #\3))) (Locator #\V#\2 (LocatorType #\ü#\z#\l#\e#\t))))
 
 "9999 2483 2483GárdonyBalatoni utca1/a2em3ajtóV2üzlet"
-(Addr (Postcode #\2#\4#\8#\3) (CTownStreet (CTown #\G#\á#\r#\d#\o#\n#\y) (CStreet #\B#\a#\l#\a#\t#\o#\n#\i)) (Type #\u#\t#\c#\a) (NumberEnding (House (HouseNumber #\1 #\/ #\a) (LevelN #\2) (DoorN #\3)) (Locator #\V#\2 (LocatorType #\ü#\z#\l#\e#\t))))
+(Addr (Postcode #\2#\4#\8#\3) (CTownStreet (CTown #\G#\á#\r#\d#\o#\n#\y) (CStreet #\B#\a#\l#\a#\t#\o#\n#\i)) (Type #\u#\t#\c#\a) (NumberEnding (House (HouseNumber #\1 #\/ #\a) (LevelDoor (LevelN #\2) (DoorN #\3))) (Locator #\V#\2 (LocatorType #\ü#\z#\l#\e#\t))))
 
 "Őr Fő út 9. 2956/3 hrsz"
 (Addr (CTownStreet (CTown #\Ő#\r) (CStreet #\F#\ő)) (Type #\ú#\t) (Number (HouseNumber #\9) (ConscriptionHrsz #\2#\9#\5#\6#\/#\3)))
@@ -55,14 +55,23 @@
 "Sé Ó 4 fszt"
 (Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\4) (Ground)))
 
+"Sé Ó 4 fszt. 2"
+(Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\4) (LevelDoor (Ground) (DoorN #\2))))
+
 "Sé Ó 4 X. emelet"
-(Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\4) (LevelN #\X)))
+(Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\4) (LevelR #\X)))
 
 "Sé Ó 4 X.e.2.sz"
-(Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\4) (LevelN #\X) (DoorN #\2)))
+(Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\4) (LevelDoor (LevelR #\X) (DoorN #\2))))
+
+"Sé Ó 4 II. 2"
+(Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\4) (LevelDoor (LevelR (Roman #\I#\I)) (DoorN #\2))))
+
+"Sé Ó 4 V/2"
+(Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\4) (LevelDoor (LevelR #\V) (DoorN #\2))))
 
 "Sé 1. Május 1 2 3 emelet 4 ajtó 5 üzlet"
-(Addr (CTownStreet (CTown #\S#\é) (CStreet #\1#\.#\ #\M#\á#\j#\u#\s#\ #\1)) (NumberEnding (House (HouseNumber #\2) (LevelN #\3) (DoorN #\4)) (Locator #\5 (LocatorType #\ü#\z#\l#\e#\t))))
+(Addr (CTownStreet (CTown #\S#\é) (CStreet #\1#\.#\ #\M#\á#\j#\u#\s#\ #\1)) (NumberEnding (House (HouseNumber #\2) (LevelDoor (LevelN #\3) (DoorN #\4))) (Locator #\5 (LocatorType #\ü#\z#\l#\e#\t))))
 
 "Sé Park"
 (Addr (CTownStreet (CTown #\S#\é) (CStreet #\P#\a#\r#\k)))
