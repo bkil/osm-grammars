@@ -60,7 +60,7 @@ BuildingN <- (+Num | Big) :('.' *Sep "ép" ?"ület" ?'.')
 StairsN <- Big :(?'.' *Sep ("lph" | "lépcsőház") ?'.')
 Level <= Ground | LevelN :(? '.' *Sep "em" ?"elet" ?'.')
 Ground <- :(("fsz" ? "t" | "földszint") ?'.')
-LevelN <- +Num
+LevelN <- +Num | Roman
 
 Door <= DoorN :(?'.' *Sep "ajtó")
 DoorN <- +Num
@@ -91,3 +91,4 @@ BigSmall <= Big | Small
 BigSmallNum <= BigSmall | Num
 BigNum <= Big | Num
 Num <= [0-9]
+Roman <= +[IVX]
