@@ -47,23 +47,23 @@ House <=
   ?(?Sepd *Sepd BuildingN)
   ?(?Sepd *Sepd StairsN)
   ?(?Sepd *Sepd Level)
-  ?(?Sepd *Sepd Door)
+  ?(?Sepd *Sepd DoorN DoorSuf)
   :(?'.')
 
 HouseNumber <-
   [1-9] ?Num ?Num
   ?(?Sep *Sep '-' *Sep [1-9] ?Num ?Num)
   ?(?Sep *Sep '/' *Sep ([A-Za-z] | [1-9] | [1-9]Num))
-  :(?(+Sepd "szám"))
+  :(?(?Sepd *Sepd "sz" ('.' | "ám")))
 
 BuildingN <- (+Num | Big) :('.' *Sep "ép" ?"ület" ?'.')
 StairsN <- Big :(?'.' *Sep ("lph" | "lépcsőház") ?'.')
-Level <= Ground | LevelN :(? '.' *Sep "em" ?"elet" ?'.')
+Level <= Ground | LevelN :(?'.' *Sep "e" ?("m" ?"elet") ?'.')
 Ground <- :(("fsz" ? "t" | "földszint") ?'.')
 LevelN <- +Num | Roman
 
-Door <= DoorN :(?'.' *Sep "ajtó")
 DoorN <- +Num
+DoorSuf <: ?'.' *Sep ("ajtó" | "sz" ?('.' | "ám"))
 
 Conscription <= ConscriptionHrsz | ConscriptionNum
 

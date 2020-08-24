@@ -58,6 +58,9 @@
 "Sé Ó 4 X. emelet"
 (Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\4) (LevelN #\X)))
 
+"Sé Ó 4 X.e.2.sz"
+(Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\4) (LevelN #\X) (DoorN #\2)))
+
 "Sé 1. Május 1 2 3 emelet 4 ajtó 5 üzlet"
 (Addr (CTownStreet (CTown #\S#\é) (CStreet #\1#\.#\ #\M#\á#\j#\u#\s#\ #\1)) (NumberEnding (House (HouseNumber #\2) (LevelN #\3) (DoorN #\4)) (Locator #\5 (LocatorType #\ü#\z#\l#\e#\t))))
 
