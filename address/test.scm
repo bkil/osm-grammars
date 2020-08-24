@@ -75,4 +75,7 @@
 
 "Sé gróf Esterházy János rakpart"
 (Addr (CTownStreet (CTown #\S#\é) (NCStreet #\g#\r#\ó#\f#\ #\E#\s#\t#\e#\r#\h#\á#\z#\y#\ #\J#\á#\n#\o#\s)) (Type #\r#\a#\k#\p#\a#\r#\t))
+
+"Sé Ó út 1.2.ép.A.lph.4.ajtó 9876/5/A/42.hrsz."
+(Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (Type #\ú#\t) (Number (House (HouseNumber #\1) (BuildingN #\2) (StairsN #\A) (DoorN #\4)) (ConscriptionHrsz #\9#\8#\7#\6#\/#\5#\/#\A#\/#\4#\2)))
 )
