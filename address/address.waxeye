@@ -50,8 +50,8 @@ House <=
   :(?'.')
 
 LevelDoor <=
-  ?Sepd *Sepd Level *Sepd DoorN ?DoorSuf
-  | ?Sepd *Sepd LevelR *Sepd :(?'/') *Sep DoorN ?DoorSuf
+  ?Sepd *Sepd Level *Sepd :(?'/') *Sep DoorN ?DoorSuf
+  | ?Sepd *Sepd LevelN *Sepd :('/') *Sep DoorN (DoorSuf | !. | !*Sep '/')
   | ?(?Sepd *Sepd Level) ?(?Sepd *Sepd DoorN DoorSuf)
 
 HouseNumber <-

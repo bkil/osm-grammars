@@ -70,6 +70,9 @@
 "Sé Ó 4 V/2"
 (Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\4) (LevelDoor (LevelR #\V) (DoorN #\2))))
 
+"Sé Ó 4 5/2"
+(Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\4) (LevelDoor (LevelN #\5) (DoorN #\2))))
+
 "Sé 1. Május 1 2 3 emelet 4 ajtó 5 üzlet"
 (Addr (CTownStreet (CTown #\S#\é) (CStreet #\1#\.#\ #\M#\á#\j#\u#\s#\ #\1)) (NumberEnding (House (HouseNumber #\2) (LevelDoor (LevelN #\3) (DoorN #\4))) (Locator #\5 (LocatorType #\ü#\z#\l#\e#\t))))
 
