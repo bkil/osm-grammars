@@ -55,8 +55,15 @@ LevelDoor <=
 HouseNumber <-
   [1-9] ?Num ?Num
   ?(?Sep *Sep '-' *Sep [1-9] ?Num ?Num)
-  ?(?Sep *Sep '/' *Sep ([A-Za-z] | [1-9] | [1-9]Num))
+  ?SubNumberOrLetter
   :(?(?Sepd *Sepd "sz" ('.' | "ám")))
+
+SubNumberOrLetter <=
+  ?Sepd *Sepd :('/') *Sep (SubNumber | SubLetter)
+  | ?Sepd *Sepd SubLetter &(Sepd | !.) !(BuildingSuf | StairsSuf | LevelSuf)
+
+SubNumber <- [1-9] | [1-9]Num
+SubLetter <- [A-Za-z]
 
 BuildingN <- (Num ?Num | Big) BuildingSuf
 BuildingSuf <: '.' *Sep "ép" ?"ület" ?'.'
