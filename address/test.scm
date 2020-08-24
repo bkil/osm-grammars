@@ -99,4 +99,7 @@
 
 "Sé Ó út 1.2.ép.A.lph.4.ajtó 9876/5/A/42.hrsz."
 (Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (Type #\ú#\t) (Number (House (HouseNumber #\1) (BuildingN #\2) (StairsN #\A) (DoorN #\4)) (ConscriptionHrsz #\9#\8#\7#\6#\/#\5#\/#\A#\/#\4#\2)))
+
+"Sé Ó 4 II lph 4 ajtó"
+(Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\4) (StairsN (Roman #\I#\I)) (DoorN #\4)))
 )
