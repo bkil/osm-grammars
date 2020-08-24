@@ -32,8 +32,6 @@ NCStreet <- +BigSmallNum *( +Sepn NotTypeNumber +BigSmallNum) ?'.'
 
 NotTypeNumber <= !(?(Type *Seps) NumberEnding !.)
 
-Type <- "út" | "utca" | "főút" | "sor" | "park" ?"ja" | "rakpart"
-
 Number <=
   Km
   | Conscription
@@ -86,7 +84,6 @@ ConscriptionHrsz <=
   :(?(?Sep *Sep '.') *Sep "hrsz" ?'.')
 
 Locator <- +(!LocatorType BigSmallNum) :(?(+[ \t.] "sz" ?"ámú")) *Sepd LocatorType
-LocatorType <= "üzlet" | "pavilon"
 
 Sep <: [ \t]
 Sepd <: Sep | '.'
@@ -99,3 +96,21 @@ BigSmallNum <= BigSmall | Num
 BigNum <= Big | Num
 Num <= [0-9]
 Roman <= +[IVX]
+
+Type <- "út" | "utca" | "u."
+  | "tér"
+  | "köz"
+  | "főút"
+  | "sor" | "s."
+  | "lakótelep" | "ltp."
+  | "park" ?"ja"
+  | "rakpart"
+  | "tanya" | "t."
+  | "körút" | "krt."
+
+LocatorType <-
+  "üzlet" | "üz."
+  | "galéria"
+  | "pavilon" | "pav."
+  | "garázs"
+  | "raktár"
