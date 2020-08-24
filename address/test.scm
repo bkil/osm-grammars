@@ -106,6 +106,9 @@
 "Sé Ó 1 2.sz.pav."
 (Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (NumberEnding (HouseNumber #\1) (Locator #\2 (LocatorType #\p#\a#\v#\.))))
 
+"Sé, Ó /bolt// 1"
+(Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (NumberEnding (Comment #\b#\o#\l#\t) (HouseNumber #\1)))
+
 "Sé Ó 1.B.III/3. szám"
 (Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\1 (SubLetter #\B)) (LevelDoor (LevelR (Roman #\I#\I#\I)) (DoorN #\3))))
 )

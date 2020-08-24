@@ -7,7 +7,9 @@ Addr <-
   TownStreet ?(+Sep Type) *Seps
   NumberEnding
 
-NumberEnding <= ?(Number ?(?Sep *Sep Locator)) *Seps
+NumberEnding <= ?Comment ?(Number ?(?Sep *Sep Locator)) *Seps
+
+Comment <- :(+'/') *(!'/' .) :(+'/') *Sepd
 
 FakePostcode <: '9999' +Seps
 
@@ -66,7 +68,7 @@ SubNumber <- [1-9] | [1-9]Num
 SubLetter <- [A-Za-z]
 
 BuildingN <- (Num ?Num | Big) BuildingSuf
-BuildingSuf <: '.' *Sep "ép" ?"ület" ?'.'
+BuildingSuf <: ?Sepd *Sep "ép" ?"ület" ?'.'
 StairsN <- (Roman | Big) StairsSuf
 StairsSuf <: ?'.' *Sep ("lh" | "lph" | "lépcsőház") ?'.'
 Level <= Ground | HighGround | LevelN LevelSuf | LevelR ?LevelSuf
