@@ -60,16 +60,16 @@ HouseNumber <-
   ?(?Sep *Sep '/' *Sep ([A-Za-z] | [1-9] | [1-9]Num))
   :(?(?Sepd *Sepd "sz" ('.' | "ám")))
 
-BuildingN <- (+Num | Big) :('.' *Sep "ép" ?"ület" ?'.')
+BuildingN <- (Num ?Num | Big) :('.' *Sep "ép" ?"ület" ?'.')
 StairsN <- Big :(?'.' *Sep ("lph" | "lépcsőház") ?'.')
 Level <= Ground | HighGround | LevelN LevelSuf | LevelR ?LevelSuf
 LevelSuf <: ?'.' *Sep "e" ?("m" ?"elet") ?'.'
 Ground <- :(("fsz" ?"t" | "földszint") ?'.')
 HighGround <- :(("mfsz" ?"t" | "magasföldszint") ?'.')
-LevelN <- +Num
+LevelN <- Num ?Num
 LevelR <- Roman
 
-DoorN <- +Num
+DoorN <- Num ?Num ?Num
 DoorSuf <: ?'.' *Sep ("ajtó" | "sz" ?('.' | "ám"))
 
 Conscription <= ConscriptionHrsz | ConscriptionNum
