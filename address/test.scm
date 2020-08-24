@@ -102,4 +102,7 @@
 
 "Sé Ó 4 II lph 4 ajtó"
 (Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\4) (StairsN (Roman #\I#\I)) (DoorN #\4)))
+
+"Sé Ó 1 2.sz.pav."
+(Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (NumberEnding (HouseNumber #\1) (Locator #\2 (LocatorType #\p#\a#\v#\.))))
 )

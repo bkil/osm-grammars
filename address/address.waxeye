@@ -68,7 +68,7 @@ LevelN <- Num ?Num
 LevelR <- Roman
 
 DoorN <- Num ?Num ?Num
-DoorSuf <: ?'.' *Sep ("ajtó" | "sz" ?('.' | "ám"))
+DoorSuf <: !(LocatorEnd !.) ?'.' *Sep ("ajtó" | "sz" ?('.' | "ám"))
 
 Conscription <= ConscriptionHrsz | ConscriptionNum
 
@@ -83,7 +83,8 @@ ConscriptionHrsz <=
   +Num ?('/' +Num *('/' +BigSmallNum))
   :(?(?Sep *Sep '.') *Sep "hrsz" ?'.')
 
-Locator <- +(!LocatorType BigSmallNum) :(?(+[ \t.] "sz" ?"ámú")) *Sepd LocatorType
+Locator <- +(!LocatorType BigSmallNum) LocatorEnd
+LocatorEnd <= :(?(+[ \t.] "sz" ?"ámú")) *Sepd LocatorType
 
 Sep <: [ \t]
 Sepd <: Sep | '.'
