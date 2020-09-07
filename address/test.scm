@@ -114,4 +114,7 @@
 
 "Sé Ó 1.B.III/3. szám"
 (Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\1 (SubLetter #\B)) (LevelDoor (LevelR (Roman #\I#\I#\I)) (DoorN #\3))))
+
+"Sé Ó út 1 hrsz"
+(Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (Type #\ú#\t) (ConscriptionHrsz #\1))
 )

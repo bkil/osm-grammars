@@ -83,14 +83,14 @@ DoorSuf <: !(LocatorEnd !.) ?'.' *Sep ("ajtó" | "sz" ?('.' | "ám"))
 
 Conscription <= ConscriptionHrsz | ConscriptionNum
 
-ConscriptionNum <=
+ConscriptionNum <-
   ( Num Num Num +Num '/' +Num
   | +Num '/' Num Num +Num
   | '0' *Num '/' +Num
   | +Num '/0' *Num
   ) :(?(?Sep *Sep '.') ?(?Sep *Sep "hrsz" ?'.'))
 
-ConscriptionHrsz <=
+ConscriptionHrsz <-
   +Num ?('/' +Num *('/' +BigSmallNum))
   :(?(?Sep *Sep '.') *Sep "hrsz" ?'.')
 
