@@ -61,11 +61,14 @@
 "Sé Ó 4 X. emelet"
 (Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\4) (LevelR #\X)))
 
+"Sé Ó 4 i. emelet"
+(Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\4) (LevelR #\i)))
+
 "Sé Ó 4 X.e.2.sz"
 (Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\4) (LevelDoor (LevelR #\X) (DoorN #\2))))
 
 "Sé Ó 4 II. 2"
-(Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\4) (LevelDoor (LevelR (Roman #\I#\I)) (DoorN #\2))))
+(Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\4) (LevelDoor (LevelR #\I#\I) (DoorN #\2))))
 
 "Sé Ó 4 V/2"
 (Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\4) (LevelDoor (LevelR #\V) (DoorN #\2))))
@@ -101,10 +104,10 @@
 (Addr (CTownStreet (CTown #\S#\é) (NCStreet #\g#\r#\ó#\f#\ #\E#\s#\t#\e#\r#\h#\á#\z#\y#\ #\J#\á#\n#\o#\s)) (Type #\r#\a#\k#\p#\a#\r#\t))
 
 "Sé Ó út 1.2.ép.A.lph.4.ajtó 9876/5/A/42.hrsz."
-(Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (Type #\ú#\t) (Number (House (HouseNumber #\1) (BuildingN #\2) (StairsN #\A) (DoorN #\4)) (ConscriptionHrsz #\9#\8#\7#\6#\/#\5#\/#\A#\/#\4#\2)))
+(Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (Type #\ú#\t) (Number (House (HouseNumber #\1) (BuildingN #\2) (StairsL #\A) (DoorN #\4)) (ConscriptionHrsz #\9#\8#\7#\6#\/#\5#\/#\A#\/#\4#\2)))
 
 "Sé Ó 4 II lph 4 ajtó"
-(Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\4) (StairsN (Roman #\I#\I)) (DoorN #\4)))
+(Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\4) (StairsR #\I#\I) (DoorN #\4)))
 
 "Sé Ó 1 2.sz.pav."
 (Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (NumberEnding (HouseNumber #\1) (Locator #\2 (LocatorType #\p#\a#\v#\.))))
@@ -113,7 +116,10 @@
 (Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (NumberEnding (Comment #\b#\o#\l#\t) (HouseNumber #\1)))
 
 "Sé Ó 1.B.III/3. szám"
-(Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\1 (SubLetter #\B)) (LevelDoor (LevelR (Roman #\I#\I#\I)) (DoorN #\3))))
+(Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\1 (SubLetter #\B)) (LevelDoor (LevelR #\I#\I#\I) (DoorN #\3))))
+
+"Sé Ó út 1. b ép. ii. em"
+(Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (Type #\ú#\t) (House (HouseNumber #\1) (BuildingN #\b) (LevelR #\i#\i)))
 
 "Sé Ó út 1 hrsz"
 (Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (Type #\ú#\t) (ConscriptionHrsz #\1))

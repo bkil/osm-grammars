@@ -45,7 +45,7 @@ Km <- [1-9] *Num :(+Sepd "km" ?(?Sep *Sep "szelvény"))
 House <=
   HouseNumber
   ?(?Sepd *Sepd BuildingN)
-  ?(?Sepd *Sepd StairsN)
+  ?(?Sepd *Sepd (StairsR | StairsL) StairsSuf)
   ?LevelDoor
   :(?'.')
 
@@ -69,7 +69,8 @@ SubLetter <- [A-Za-z]
 
 BuildingN <- (Num ?Num | Small | Big) BuildingSuf
 BuildingSuf <: ?Sepd *Sep ?(("sz." | "számú") ?' ') ?("iroda" ?' ') "é" ?("p" ?"ület") ?'.'
-StairsN <- (Roman | Big) StairsSuf
+StairsR <- +[ivx] | +[IVX]
+StairsL <- Big
 StairsSuf <: ?'.' *Sep ("lh" | "lph" | "lcs" | "lpház" | "lp" | "lépcsőház") ?'.'
 Level <= Basement | Ground | HighGround | HalfLevel | LevelN LevelSuf | LevelR ?LevelSuf
 LevelSuf <: ?'.' *Sep "e" ?("m" ?"elet") ?'.'
@@ -78,7 +79,7 @@ Ground <- :(("fsz" ?"t" | "földszint") ?'.')
 HighGround <- :(("mfsz" ?"t" | "magasföldszint") ?'.')
 HalfLevel <- :("f" ?"él" "e" ?"melet" ?'.')
 LevelN <- Num ?Num
-LevelR <- Roman
+LevelR <- +[ivx] | +[IVX]
 
 DoorN <- Num ?Num ?Num
 DoorSuf <: !(LocatorEnd !.) ?'.' *Sep ("ajtó" | "sz" ?('.' | "ám"))
@@ -109,7 +110,6 @@ BigSmall <= Big | Small
 BigSmallNum <= BigSmall | Num
 BigNum <= Big | Num
 Num <= [0-9]
-Roman <= +[IVX]
 
 Type <- "út" | "utca" | "u."
   | "tér"
