@@ -68,7 +68,7 @@ SubNumber <- [1-9] | [1-9]Num
 SubLetter <- [A-Za-z]
 
 BuildingN <- (Num ?Num | Small | Big) BuildingSuf
-BuildingSuf <: ?Sepd *Sep "ép" ?"ület" ?'.'
+BuildingSuf <: ?Sepd *Sep ?(("sz." | "számú") ?' ') ?("iroda" ?' ') "é" ?("p" ?"ület") ?'.'
 StairsN <- (Roman | Big) StairsSuf
 StairsSuf <: ?'.' *Sep ("lh" | "lph" | "lcs" | "lpház" | "lp" | "lépcsőház") ?'.'
 Level <= Basement | Ground | HighGround | HalfLevel | LevelN LevelSuf | LevelR ?LevelSuf
