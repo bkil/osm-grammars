@@ -76,6 +76,9 @@
 "Sé 1. Május 1 2 3 emelet 4 ajtó 5 üzlet"
 (Addr (CTownStreet (CTown #\S#\é) (CStreet #\1#\.#\ #\M#\á#\j#\u#\s#\ #\1)) (NumberEnding (House (HouseNumber #\2) (LevelDoor (LevelN #\3) (DoorN #\4))) (Locator #\5 (LocatorType #\ü#\z#\l#\e#\t))))
 
+"Sé Ó 1 2/Ü."
+(Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (NumberEnding (HouseNumber #\1) (Locator #\2 (LocatorType #\/#\Ü#\.))))
+
 "Sé Park"
 (Addr (CTownStreet (CTown #\S#\é) (CStreet #\P#\a#\r#\k)))
 
