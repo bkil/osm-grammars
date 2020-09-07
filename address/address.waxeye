@@ -71,10 +71,12 @@ BuildingN <- (Num ?Num | Big) BuildingSuf
 BuildingSuf <: ?Sepd *Sep "ép" ?"ület" ?'.'
 StairsN <- (Roman | Big) StairsSuf
 StairsSuf <: ?'.' *Sep ("lh" | "lph" | "lépcsőház") ?'.'
-Level <= Ground | HighGround | LevelN LevelSuf | LevelR ?LevelSuf
+Level <= Basement | Ground | HighGround | HalfLevel | LevelN LevelSuf | LevelR ?LevelSuf
 LevelSuf <: ?'.' *Sep "e" ?("m" ?"elet") ?'.'
+Basement <- :("alagsor" ?'.')
 Ground <- :(("fsz" ?"t" | "földszint") ?'.')
 HighGround <- :(("mfsz" ?"t" | "magasföldszint") ?'.')
+HalfLevel <- :("f" ?"él" "e" ?"melet" ?'.')
 LevelN <- Num ?Num
 LevelR <- Roman
 
