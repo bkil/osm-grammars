@@ -3,7 +3,7 @@
 # Don't forget to follow nonterminals when you are checking against this.
 
 Addr <-
-  ?FakePostcode ?(?(RepeatedPostcode +Seps) *(RepeatedPostcode +Seps) LastPostcode *Seps)
+  ?Seps *Seps ?FakePostcode ?(?(RepeatedPostcode +Seps) *(RepeatedPostcode +Seps) LastPostcode *Seps)
   TownStreet ?(+Sep Type) *Seps
   NumberEnding
 
