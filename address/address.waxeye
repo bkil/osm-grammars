@@ -72,12 +72,13 @@ BuildingSuf <: ?Sepd *Sep ?(("sz." | "számú") ?' ') ?("iroda" ?' ') "é" ?("p"
 StairsR <- +[ivx] | +[IVX]
 StairsL <- Big
 StairsSuf <: ?'.' *Sep ("lh" | "lph" | "lcs" | "lpház" | "lp" | "lép" | "lépcsőház") ?'.'
-Level <= Basement | Ground | HighGround | HalfLevel | LevelN LevelSuf | LevelR ?LevelSuf
+Level <= Basement | Ground | HighGround | HalfLevel | Roof | LevelN LevelSuf | LevelR ?LevelSuf
 LevelSuf <: ?'.' *Sep "e" ?("m" ?"elet") ?'.'
 Basement <- :(("alagsor" | "as" | "alg" | "al") ?'.')
 Ground <- :(("fs" ?("z" ?"t") | "földszint") ?'.')
 HighGround <- :(("mf" ?("sz" ?"t") | "magasföldszint") ?'.')
 HalfLevel <- :("f" ?("él" | '.' *Sep) "e" ?"melet" ?'.' | '1/2' *Sepd "em" ?'.')
+Roof <- :("tetőtér" | "tetőszint" | "tt" ?'.') ?LevelSuf
 LevelN <- Num ?Num
 LevelR <- +[ivx] | +[IVX]
 
