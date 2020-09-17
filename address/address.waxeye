@@ -7,9 +7,9 @@ Addr <-
   TownStreet ?(+Sep Type) *Seps
   NumberEnding
 
-NumberEnding <= ?Comment ?(Number ?(?Sep *Sep Locator)) *Seps
+NumberEnding <= ?Comment ?(Number ?Comment ?(?Sep *Sep Locator ?Comment)) *Seps
 
-Comment <- :(+'/') *(!'/' .) :(+'/') *Sepd
+Comment <- ?Seps *Seps (:(+'/') *(!'/' .) :(+'/') (+Seps | !.) | :('(') (Conscription | *(![()] .)) :(')') *Seps)
 
 FakePostcode <: '9999' +Seps
 
@@ -44,6 +44,7 @@ Km <- [1-9] *Num :(+Sepd "km" ?(?Sep *Sep "szelvény"))
 
 House <=
   HouseNumber
+  ?Comment
   ?(?Sepd *Sepd BuildingN)
   ?(?Sepd *Sepd (StairsR | StairsL) StairsSuf)
   ?LevelDoor
@@ -57,6 +58,7 @@ LevelDoor <=
 HouseNumber <-
   [1-9] ?Num ?Num
   ?(?Sep *Sep '-' *Sep [1-9] ?Num ?Num)
+  ?(+Seps Comment)
   ?SubNumberOrLetter
   :(?(?Sepd *Sepd "sz" ('.' | "ám")))
 
@@ -82,13 +84,13 @@ Roof <- :("tetőtér" | "tetőszint" | "tt" ?'.') ?LevelSuf
 LevelN <- Num ?Num
 LevelR <- +[ivx] | +[IVX]
 
-DoorN <- Num ?Num ?Num
+DoorN <- !Conscription Num ?Num ?Num
 DoorSuf <: !(LocatorEnd !.) ?'.' *Sep ("a" ?("jt" ?"ó") | "sz" ?('.' | "ám") | '-' [eEaAöÖoO] "s kapucsengő")
 
 Conscription <= ConscriptionHrsz | ConscriptionNum
 
 ConscriptionNum <-
-  ( Num Num Num +Num '/' +Num
+  ( Num Num Num +Num '/' +Num ?('/' Big ?('/' Num))
   | +Num '/' Num Num +Num
   | '0' *Num '/' +Num
   | +Num '/0' *Num
