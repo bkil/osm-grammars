@@ -85,7 +85,7 @@ LevelN <- Num ?Num
 LevelR <- +[ivx] | +[IVX]
 
 DoorN <- !Conscription Num ?Num ?Num
-DoorSuf <: !(LocatorEnd !.) ?'.' *Sep ("a" ?("jt" ?"ó") | "sz" ?('.' | "ám") | '-' [eEaAöÖoO] "s kapucsengő")
+DoorSuf <: !(LocatorEnd !.) ?'.' *Sep ("a" ?("jt" ?"ó") | "sz" ?('.' | "ám") | '-' [eEaAöÖoO] "s " ?"kapu" "csengő")
 
 Conscription <= ConscriptionHrsz | ConscriptionNum
 
