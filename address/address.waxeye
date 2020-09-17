@@ -112,20 +112,32 @@ BigNum <= Big | Num
 Num <= [0-9]
 
 Type <- "út" | "utca" | "u."
-  | "tér"
+  | "útja"
+  | "határút"
+  | "tér" | "tere"
+  | "tanya" | 't.'
   | "köz"
   | "főút"
-  | "sor" | "s."
+  | "sor" | 's.'
+  | "sétány"
   | "lakótelep" | "ltp."
   | "park" ?"ja"
   | "rakpart" | "rkp."
-  | "tanya" | "t."
   | "körút" | "krt."
+  | "sugárút" | "sgt."
+  | "dűlő" | 'd.'
   | "fasor"
+  | "körvasútsor"
+  | "országút"
 
 LocatorType <-
   "üzlet" | "üz." | "/ü."
   | "galéria"
   | "pavilon" | "pav."
+  | "stand"
+  | "mélygarázs"
   | "garázs"
   | "raktár"
+  | "műhely"
+  | "asztal"
+  | "iroda"
