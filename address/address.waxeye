@@ -75,7 +75,8 @@ HouseNumber <-
   :(?(?Sepd *Sepd "sz" ('.' | "ám")))
 
 SubNumberOrLetter <=
-  ?Sepd *Sepd :('/') *Sep (SubNumber | SubLetter)
+  ?Sepd *Sepd :([/-]) *Sep SubLetter
+  | ?Sepd *Sepd :('/') *Sep SubLetter
   | ?Sepd *Sepd SubLetter &(Sepd | !.) !(BuildingSuf | StairsSuf | LevelSuf)
 
 SubNumber <- [1-9] | [1-9] Num
