@@ -136,6 +136,9 @@
 "Sé Ó út 1. b ép. ii. em"
 (Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (Type #\ú#\t) (House (HouseNumber #\1) (BuildingN #\b) (LevelR #\i#\i)))
 
+"Sé Ó út 1 \"b\" ép"
+(Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (Type #\ú#\t) (House (HouseNumber #\1) (BuildingN #\b)))
+
 "Sé Ó út 1 hrsz"
 (Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (Type #\ú#\t) (ConscriptionHrsz #\1))
 
