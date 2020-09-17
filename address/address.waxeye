@@ -68,7 +68,7 @@ SubNumber <- [1-9] | [1-9]Num
 SubLetter <- [A-Za-z]
 
 BuildingN <- (Num ?Num | Small | Big | :('"') Small :('"') | :('"') Big :('"')) BuildingSuf
-BuildingSuf <: ?Sepd *Sep ?(("sz." | "számú") ?' ') ?("iroda" ?' ') "é" ?("p" ?"ület") ?'.'
+BuildingSuf <: ?Sepd *Sep ?(("sz." | "számú") ?' ') ?("iroda" ?' ') "é" ("p" ?"ület" ?'.' | Seps)
 StairsR <- +[ivx] | +[IVX]
 StairsL <- Big
 StairsSuf <: ?'.' *Sep ("lh" | "lph" | "lcs" | "lpház" | "lp" | "lép" | "lépcsőház") ?'.'
