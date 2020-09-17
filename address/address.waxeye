@@ -66,16 +66,19 @@ SubNumberOrLetter <=
   ?Sepd *Sepd :('/') *Sep (SubNumber | SubLetter)
   | ?Sepd *Sepd SubLetter &(Sepd | !.) !(BuildingSuf | StairsSuf | LevelSuf)
 
-SubNumber <- [1-9] | [1-9]Num
+SubNumber <- [1-9] | [1-9] Num
 SubLetter <- [A-Za-z]
 
-BuildingN <- (Num ?Num | Small | Big | :('"') Small :('"') | :('"') Big :('"')) BuildingSuf
+BuildingN <- Num ?Num | Small | Big | :('"') Small :('"') | :('"') Big :('"')
 BuildingSuf <: ?Sepd *Sep ?(("sz." | "számú") ?' ') ?("iroda" ?' ') "é" ("p" ?"ület" ?'.' | Seps)
 StairsR <- +[ivx] | +[IVX]
 StairsL <- Big
-StairsSuf <: ?'.' *Sep ("lh" | "lph" | "lcs" | "lpház" | "lp" | "lép" | "lépcsőház") ?'.'
-Level <= (Basement | Ground | HighGround | HalfLevel | Roof | LevelR) ?LevelSuf | LevelN LevelSuf
-LevelSuf <: ?'.' *Sep "e" ?("m" ?"elet") ?'.'
+StairsSuf <: ?'.' *Sep StairsToken ?'.'
+StairsToken <: "lh" | "lph" | "lcs" | "lpház" | "lp" | "lép" | "lépcsőház"
+Level <= NamedLevel ?LevelSuf | LevelN LevelSuf
+NamedLevel <= Basement | Ground | HighGround | HalfLevel | Roof | LevelR
+LevelSuf <: ?'.' *Sep LevelToken ?'.'
+LevelToken <: "e" ?("m" ?"elet")
 Basement <- :(("alagsor" | "as" | "alg" | "al") ?'.')
 Ground <- :(("fs" ?("z" ?"t") | "földszint") ?'.')
 HighGround <- :(("mf" ?("sz" ?"t") | "magasföldszint") ?'.')
