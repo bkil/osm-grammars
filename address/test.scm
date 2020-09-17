@@ -208,6 +208,15 @@
 "Sé Ó 1 2 E / 3 A"
 (Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\1) (LevelDoor (LevelN #\2) (DoorN #\3))))
 
+"Sé Ó út 3. ép: B lh: C"
+(Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (Type #\ú#\t) (House (HouseNumber #\3) (BuildingN #\B) (StairsL #\C)))
+
+"Sé Ó út 3. ép: B lh: C fszt."
+(Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (Type #\ú#\t) (House (HouseNumber #\3) (BuildingN #\B) (StairsL #\C) (Ground)))
+
+"Sé Ó út 4. épület: A lépcsőház: B emelet: 3 ajtó: 2"
+(Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (Type #\ú#\t) (House (HouseNumber #\4) (BuildingN #\A) (StairsL #\B) (LevelN #\3) (DoorN #\2)))
+
 "Sé Ó 1 4-es kapucsengő"
 (Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\1) (DoorN #\4)))
 

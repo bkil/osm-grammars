@@ -45,10 +45,22 @@ Km <- [1-9] *Num :(+Sepd "km" ?(?Sep *Sep "szelvény"))
 House <=
   HouseNumber
   ?Comment
-  ?(?Sepd *Sepd BuildingN)
-  ?(?Sepd *Sepd (StairsR | StairsL) StairsSuf)
-  ?LevelDoor
+  (
+    ReversedBuilding ?ReversedStairs ?ReversedOrNamedLevel ?ReversedDoor
+  | ?ReversedBuilding ReversedStairs ?ReversedOrNamedLevel ?ReversedDoor
+  | ?ReversedBuilding ?ReversedStairs ReversedLevel ?ReversedDoor
+  | ?ReversedBuilding ?ReversedStairs ?ReversedOrNamedLevel ReversedDoor
+  | ?(?Sepd *Sepd BuildingN BuildingSuf)
+    ?(?Sepd *Sepd (StairsR | StairsL) StairsSuf)
+    ?LevelDoor
+  )
   :(?'.')
+
+ReversedBuilding <= +Seps :("ép" ?"ület" ':') *Seps BuildingN
+ReversedStairs <= +Seps StairsToken :(':') *Seps (StairsR | StairsL)
+ReversedLevel <= +Seps LevelToken :(':') *Seps (Level | LevelN)
+ReversedDoor <= +Seps :("a" ?("j" ?"tó") ':') *Seps DoorN
+ReversedOrNamedLevel <= ReversedLevel | +Seps NamedLevel
 
 LevelDoor <=
   ?Sepd *Sepd Level *Sepd :(?'/') *Sep DoorN ?DoorSuf
