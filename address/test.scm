@@ -202,6 +202,12 @@
 "Sé Ó út 4 B. lh. tetőtér 3."
 (Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (Type #\ú#\t) (House (HouseNumber #\4) (StairsL #\B) (LevelDoor (Roof) (DoorN #\3))))
 
+"Sé Ó 1 2 E 3"
+(Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\1) (LevelDoor (LevelN #\2) (DoorN #\3))))
+
+"Sé Ó 1 2 E / 3 A"
+(Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\1) (LevelDoor (LevelN #\2) (DoorN #\3))))
+
 "Sé Ó 1 4-es kapucsengő"
 (Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\1) (DoorN #\4)))
 
@@ -219,5 +225,8 @@
 
 "Sé Ó 4 félemelet 3"
 (Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\4) (LevelDoor (HalfLevel) (DoorN #\3))))
+
+"Sé Ó 4/a MF EM /3"
+(Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\4 (SubLetter #\a)) (LevelDoor (HighGround) (DoorN #\3))))
 
 )
