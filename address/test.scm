@@ -235,6 +235,9 @@
 "Sé Ó 4 A lház"
 (Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\4) (StairsL #\A)))
 
+"Sé Ó 4 2 lh"
+(Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\4) (StairsN #\2)))
+
 "Sé Ó út 3. ép: B lh: C"
 (Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (Type #\ú#\t) (House (HouseNumber #\3) (BuildingN #\B) (StairsL #\C)))
 

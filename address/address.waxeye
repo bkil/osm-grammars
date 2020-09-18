@@ -51,13 +51,13 @@ House <=
   | ?ReversedBuilding ?ReversedStairs ReversedLevel ?ReversedDoor
   | ?ReversedBuilding ?ReversedStairs ?ReversedOrNamedLevel ReversedDoor
   | ?(?Sepd *Sepd BuildingN BuildingSuf)
-    ?(?Sepd *Sepd (StairsR | StairsL) StairsSuf)
+    ?(?Sepd *Sepd StairsX StairsSuf)
     ?LevelDoor
   )
   :(?'.')
 
 ReversedBuilding <= +Seps :("ép" ?"ület" ':') *Seps BuildingN
-ReversedStairs <= +Seps StairsToken :(':') *Seps (StairsR | StairsL)
+ReversedStairs <= +Seps StairsToken :(':') *Seps StairsX
 ReversedLevel <= +Seps LevelToken :(':') *Seps (Level | LevelN)
 ReversedDoor <= +Seps :("a" ?("j" ?"tó") ':') *Seps DoorN
 ReversedOrNamedLevel <= ReversedLevel | +Seps NamedLevel
@@ -85,8 +85,10 @@ SubLetter <- [A-Za-z]
 
 BuildingN <- Num ?Num | +[ivx] | +[IVX] | Small | Big | :('"') (Small | Big) :('"')
 BuildingSuf <: ?Sepd *Sep ?(("sz." | "számú") ?' ') ?("iroda" ?' ') "é" ("p" ?"ület" ?'.' | Seps)
+StairsX <= StairsR | StairsL | StairsN
 StairsR <- +[ivx] | +[IVX]
-StairsL <- Big
+StairsL <- BigSmall
+StairsN <- [1-9]
 StairsSuf <: ?'.' *Sep StairsToken ?'.'
 StairsToken <: "lépcsőház" | "lép" | "lpház" | "lház" | "lph" | "lp" | "lh" | "lcs"
 Level <= NamedLevel ?LevelSuf | LevelN LevelSuf
