@@ -89,9 +89,10 @@ StairsL <- Big
 StairsSuf <: ?'.' *Sep StairsToken ?'.'
 StairsToken <: "lh" | "lph" | "lcs" | "lpház" | "lp" | "lép" | "lépcsőház"
 Level <= NamedLevel ?LevelSuf | LevelN LevelSuf
-NamedLevel <= Basement | Ground | HighGround | HalfLevel | Roof | LevelR
+NamedLevel <= Cellar | Basement | Ground | HighGround | HalfLevel | Roof | LevelR
 LevelSuf <: ?'.' *Sep LevelToken ?'.'
 LevelToken <: "e" ?("m" ?"elet")
+Cellar <- :("pince" *Sepd ?("sz" ?("int" | ?'.')))
 Basement <- :(("alagsor" | "as" | "alg" | "al") ?'.')
 Ground <- :(("fs" ?("z" ?"t") | "földszint") ?'.')
 HighGround <- :(("mf" ?("sz" ?"t") | "magasföldszint") ?'.')
