@@ -97,7 +97,7 @@ Cellar <- :("pince" *Sepd ?("sz" ?("int" | ?'.')))
 Basement <- :(("alagsor" | "as" | "alg" | "al") ?'.')
 Ground <- :(("fs" ?("z" ?"t") | "földszint") ?'.')
 HighGround <- :(("mf" ?("sz" ?"t") | "magasföldszint") ?'.')
-HalfLevel <- :("f" ?("él" | '.' *Sep) "e" ?"melet" ?'.' | '1/2' *Sepd "em" ?'.')
+HalfLevel <- :("f" ?("él") ?('.' *Sep) "e" ?("m" ?"elet") ?'.' | '1/2' *Sepd "em" ?'.')
 Roof <- :("tetőtér" | "tetőszint" | "tt" ?'.') ?LevelSuf
 LevelN <- Num ?Num
 LevelR <- +[ivx] | +[IVX]

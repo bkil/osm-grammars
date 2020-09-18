@@ -253,6 +253,9 @@
 "Sé Ó 4 félemelet 3"
 (Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\4) (LevelDoor (HalfLevel) (DoorN #\3))))
 
+"Sé Ó 4 fél.em. 3"
+(Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\4) (LevelDoor (HalfLevel) (DoorN #\3))))
+
 "Sé Ó 4/a MF EM /3"
 (Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\4 (SubLetter #\a)) (LevelDoor (HighGround) (DoorN #\3))))
 
