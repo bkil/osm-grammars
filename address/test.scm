@@ -226,6 +226,9 @@
 "Sé Ó 1 2 / 3 ajtó"
 (Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\1) (LevelDoor (LevelN #\2) (DoorN #\3))))
 
+"Sé Ó 4 A lház"
+(Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\4) (StairsL #\A)))
+
 "Sé Ó út 3. ép: B lh: C"
 (Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (Type #\ú#\t) (House (HouseNumber #\3) (BuildingN #\B) (StairsL #\C)))
 

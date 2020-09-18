@@ -88,7 +88,7 @@ BuildingSuf <: ?Sepd *Sep ?(("sz." | "számú") ?' ') ?("iroda" ?' ') "é" ("p" 
 StairsR <- +[ivx] | +[IVX]
 StairsL <- Big
 StairsSuf <: ?'.' *Sep StairsToken ?'.'
-StairsToken <: "lh" | "lph" | "lcs" | "lpház" | "lp" | "lép" | "lépcsőház"
+StairsToken <: "lépcsőház" | "lép" | "lpház" | "lház" | "lph" | "lp" | "lh" | "lcs"
 Level <= NamedLevel ?LevelSuf | LevelN LevelSuf
 NamedLevel <= Cellar | Basement | Ground | HighGround | HalfLevel | Roof | LevelR
 LevelSuf <: ?'.' *Sep LevelToken ?'.'
