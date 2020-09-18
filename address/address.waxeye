@@ -94,9 +94,9 @@ NamedLevel <= Cellar | Basement | Ground | HighGround | HalfLevel | Roof | Level
 LevelSuf <: ?'.' *Sep LevelToken ?'.'
 LevelToken <: "e" ?("m" ?"elet")
 Cellar <- :("pince" *Sepd ?("sz" ?("int" | ?'.')))
-Basement <- :(("alagsor" | "as" | "alg" | "al") ?'.')
+Basement <- :(("alags" ?"or" | "as" | "als" | "alg" | "al") ?'.')
 Ground <- :(("fs" ?("z" ?"t") | "földszint") ?'.')
-HighGround <- :(("mf" ?("sz" ?"t") | "magasföldszint") ?'.')
+HighGround <- :(("m" ?"g" "f" ?("sz" ?"t") | "magasföldszint") ?'.')
 HalfLevel <- :("f" ?("él") ?('.' *Sep) "e" ?("m" ?"elet") ?'.' | '1/2' *Sepd "em" ?'.')
 Roof <- :("tetőtér" | "tetőszint" | "tt" ?'.') ?LevelSuf
 LevelN <- Num ?Num
@@ -147,18 +147,22 @@ Type <- "út" | "utca" | "u."
   | "körút" | "krt."
   | "sugárút" | "sgt."
   | "dűlő" | 'd.'
-  | "fasor"
+  | "fasor" |  "fasora"
   | "körvasútsor"
   | "országút"
+  | "árok"
+  | "udvar"
 
 LocatorType <-
-  "üzlet" | "üz." | "/ü."
+  "üzlethelyiség" | "üzlet" | "üz." | "/ü."
   | "galéria"
   | "pavilon" | "pav."
   | "stand"
+  | "faház"
   | "mélygarázs"
   | "garázs"
   | "raktár"
   | "műhely"
   | "asztal"
   | "iroda"
+  | "épület"
