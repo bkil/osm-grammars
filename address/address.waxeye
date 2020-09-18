@@ -64,8 +64,9 @@ ReversedOrNamedLevel <= ReversedLevel | +Seps NamedLevel
 
 LevelDoor <=
   ?Sepd *Sepd Level *Sepd :(?'/') *Sep DoorN ?DoorSuf
-  | ?Sepd *Sepd LevelN *Sepd :('/') *Sep DoorN (DoorSuf | !. | !*Sep '/')
-  | ?(?Sepd *Sepd Level) ?(?Sepd *Sepd DoorN DoorSuf)
+  | ?Sepd *Sepd LevelN *Sepd :('/') *Sep DoorN ?DoorSuf
+  | ?Sepd *Sepd Level ?(?Sepd *Sepd DoorN DoorSuf)
+  | ?(?Sepd *Sepd Level) ?Sepd *Sepd DoorN !(LocatorEnd !.) ?DoorSuf
 
 HouseNumber <-
   [1-9] ?Num ?Num
