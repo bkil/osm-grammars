@@ -135,10 +135,10 @@ BigNum <= Big | Num
 Num <= [0-9]
 
 Type <-
-  "u."
-  | "útja"
+  "útja"
   | "út"
   | "utca"
+  | "ut"
   | "határút"
   | "tér"
   | "tere"
@@ -149,6 +149,8 @@ Type <-
   | "sor"
   | 's.'
   | "sétány"
+  | "sét" ?'.'
+  | "stny."
   | "lakótelep"
   | "ltp."
   | "park" ?"ja"
@@ -156,6 +158,7 @@ Type <-
   | "rkp."
   | "körút"
   | "krt."
+  | "kapu"
   | "sugárút"
   | "sgt."
   | "dűlő"
@@ -167,6 +170,8 @@ Type <-
   | "árok"
   | "udvar"
   | "telep"
+  | "sziget"
+  | "u" ?'.'
 
 LocatorType <-
   "üz."
