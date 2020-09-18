@@ -157,6 +157,9 @@
 "Sé Ó 1-a"
 (Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (HouseNumber #\1 (SubLetter #\a)))
 
+"Sé Ó 1/2"
+(Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (HouseNumber #\1 (SubNumber #\2)))
+
 "Sé Ó 1/a /bolt/"
 (Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\1 (SubLetter #\a)) (Comment #\b#\o#\l#\t)))
 
