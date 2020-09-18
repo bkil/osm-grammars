@@ -199,6 +199,9 @@
 "Sé Jóút 1"
 (Addr (CTownStreet (CTown #\S#\é) (CStreet #\J#\ó#\ú#\t)) (HouseNumber #\1))
 
+"Sé Ó útja 1"
+(Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (Type #\ú#\t#\j#\a) (HouseNumber #\1))
+
 "Sé Ó körvasútsor 1"
 (Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (Type #\k#\ö#\r#\v#\a#\s#\ú#\t#\s#\o#\r) (HouseNumber #\1))
 
