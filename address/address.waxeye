@@ -92,13 +92,14 @@ StairsN <- [1-9]
 StairsSuf <: ?'.' *Sep StairsToken ?'.'
 StairsToken <: "lépcsőház" | "lép" | "lpház" | "lház" | "lph" | "lp" | "lh" | "lcs"
 Level <= NamedLevel ?LevelSuf | LevelN LevelSuf
-NamedLevel <= Cellar | Basement | Ground | HighGround | HalfLevel | Roof | LevelR
+NamedLevel <= Cellar | Basement | LowGround | Ground | HighGround | HalfLevel | Roof | LevelR
 LevelSuf <: ?'.' *Sep LevelToken ?'.'
 LevelToken <: "e" ?("m" ?"elet")
 Cellar <- :("pince" *Sepd ?("sz" ?("int" | ?'.')))
 Basement <- :(("alags" ?"or" | "as" | "als" | "alg" | "al") ?'.')
 Ground <- :(("fs" ?("z" ?"t") | "földszint") ?'.')
 HighGround <- :(("m" ?"g" "f" ?("sz" ?"t") | "magasföldszint") ?'.')
+LowGround <- :("mélyföldszint" | ("mély" ?"f" ?("sz" ?"t")) ?'.')
 HalfLevel <- :("f" ?("él") ?('.' *Sep) "e" ?("m" ?"elet") ?'.' | '1/2' *Sepd "em" ?'.')
 Roof <- :("tetőtér" | "tetőszint" | "tt" ?'.') ?LevelSuf
 LevelN <- Num ?Num
