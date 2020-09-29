@@ -7,7 +7,7 @@ Addr <-
   TownStreet ?(+Sep Type) *Seps
   NumberEnding
 
-NumberEnding <= ?Comment ?(Number ?Comment ?(?Sep *Sep Locator ?Comment)) *Seps
+NumberEnding <= ?Comment ?(Number ?Comment ?(?Sep *Sep Locator ?Comment)) *Seps !.
 
 Comment <- ?Seps *Seps (:(+'/') *(!'/' .) :(+'/') (+Seps | !.) | :('(') (Conscription | *(![()] .)) :(')') *Seps)
 
@@ -32,7 +32,7 @@ CTown <- Big +Small
 CStreet <- BigNum *BigSmallNum *( +Sepn NotTypeNumber +BigSmallNum) ?'.'
 NCStreet <- +BigSmallNum *( +Sepn NotTypeNumber +BigSmallNum) ?'.'
 
-NotTypeNumber <= !(?(Type *Seps) NumberEnding !.)
+NotTypeNumber <= !(?(Type *Seps) NumberEnding)
 
 Number <=
   Km
