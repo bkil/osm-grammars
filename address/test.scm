@@ -106,6 +106,9 @@
 "Sé Park"
 (Addr (CTownStreet (CTown #\S#\é) (CStreet #\P#\a#\r#\k)))
 
+"Sé, Park"
+(Addr (CTownStreet (CTown #\S#\é) (CStreet #\P#\a#\r#\k)))
+
 "Sé Strand"
 (Addr (CTownStreet (CTown #\S#\é) (CStreet #\S#\t#\r#\a#\n#\d)))
 
@@ -276,5 +279,20 @@
 
 "Sé Ó 4 mélyf. 3"
 (Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\4) (LevelDoor (LowGround) (DoorN #\3))))
+
+"9999 2483 2483GárdonyMájus 1(2/3hrsz)4-5/a/szexshop// bé.clh6/7V8üzlet"
+(Addr (Postcode #\2#\4#\8#\3) (CTownStreet (CTown #\G#\á#\r#\d#\o#\n#\y) (CStreet #\M#\á#\j#\u#\s#\ #\1)) (NumberEnding (Comment (ConscriptionHrsz #\2#\/#\3)) (House (HouseNumber #\4#\-#\5 (SubLetter #\a)) (Comment #\s#\z#\e#\x#\s#\h#\o#\p) (BuildingN #\b) (StairsL #\c) (LevelDoor (LevelN #\6) (DoorN #\7))) (Locator #\V#\8 (LocatorType #\ü#\z#\l#\e#\t))))
+
+"Fa út 4 (FaUt.hu bolt)"
+(Addr (WStreet #\F#\a) (Type #\ú#\t) (HouseNumber #\4 (Comment #\F#\a#\U#\t#\.#\h#\u#\ #\b#\o#\l#\t)))
+
+"FA út 4"
+(Addr (WStreet #\F#\A) (Type #\ú#\t) (HouseNumber #\4))
+
+"Fa-Ló út 4"
+(Addr (WStreet #\F#\a#\-#\L#\ó) (Type #\ú#\t) (HouseNumber #\4))
+
+"FA-LÓ út 4"
+(Addr (WStreet #\F#\A#\-#\L#\Ó) (Type #\ú#\t) (HouseNumber #\4))
 
 )

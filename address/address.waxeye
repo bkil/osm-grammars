@@ -4,8 +4,10 @@
 
 Addr <-
   ?Seps *Seps ?FakePostcode ?(?(RepeatedPostcode +Seps) *(RepeatedPostcode +Seps) LastPostcode *Seps)
-  TownStreet ?(+Sep Type) *Seps
-  NumberEnding
+  (WStreet | TownStreet)
+  ?(+Sep Type) *Seps NumberEnding
+
+WStreet <- (+Num | +Small *('-' +Small) | Big (*Big *('-' +Big) | *Small *('-' (*Small | Big *Small)))) ?'.'
 
 NumberEnding <= ?Comment ?(Number ?Comment ?(?Sep *Sep Locator ?Comment)) *Seps !.
 
