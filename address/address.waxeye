@@ -37,12 +37,12 @@ NCStreet <- +BigSmallNum *( +Sepn NotTypeNumber +BigSmallNum) ?'.'
 NotTypeNumber <= !(?(Type *Seps) NumberEnding)
 
 Number <=
-  Km
+  Km ?(+Seps Conscription)
   | Conscription
   | House ?(+Seps Conscription)
   | :('(') Conscription :(')') *Seps House
 
-Km <- [1-9] *Num :(+Sepd "km" ?(?Sep *Sep "szelvény"))
+Km <- [1-9] *Num :(+Sepd "km" ?(?Sep *Sep "szelvény" | "sz"))
 
 House <=
   HouseNumber
@@ -155,6 +155,8 @@ Type <-
   | "sét" ?'.'
   | "stny."
   | "lakótelep"
+  | "lépcső"
+  | "lép."
   | "ltp."
   | "park" ?"ja"
   | "rakpart"

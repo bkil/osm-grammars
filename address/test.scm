@@ -321,6 +321,12 @@ succeed
 "ÚJVÁROS 11. B.LÉP. 2.EM. 5.AJTÓ"
 (Addr (WStreet #\Ú#\J#\V#\Á#\R#\O#\S) (House (HouseNumber #\1#\1) (StairsL #\B) (LevelDoor (LevelN #\2) (DoorN #\5))))
 
+"1237 SÉ Ó út 42. KMSZ. (0123/45)"
+(Addr (Postcode #\1#\2#\3#\7) (UTownStreet (UTown #\S#\É) (UStreet #\Ó)) (Type #\ú#\t) (NumberEnding (Km #\4#\2) (Comment (ConscriptionNum #\0#\1#\2#\3#\/#\4#\5))))
+
+"1237 SÉ Ó út 42. KMSZ. 0123/45"
+(Addr (Postcode #\1#\2#\3#\7) (UTownStreet (UTown #\S#\É) (UStreet #\Ó)) (Type #\ú#\t) (Number (Km #\4#\2) (ConscriptionNum #\0#\1#\2#\3#\/#\4#\5)))
+
 ; ==== ==== ==== ====
 ; TODO these give an invalid parse:
 
@@ -345,6 +351,9 @@ succeed
 
 "Sé Ő lépcső 4"
 (succeed)
+
+"1237 SÉ TÓ 42. KMSZ. út 0123/45"
+(Addr (Postcode #\1#\2#\3#\7) (UTownStreet (UTown #\S#\É) (UStreet #\T#\Ó)) (Type #\ú#\t) (Number (Km #\4#\2) (ConscriptionNum #\0#\1#\2#\3#\/#\4#\5)))
 
 
 ;
