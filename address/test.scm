@@ -103,9 +103,6 @@
 "Sé Ó 1 2/Ü."
 (Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (NumberEnding (HouseNumber #\1) (Locator #\2 (LocatorType #\/#\Ü#\.))))
 
-"Sé Park"
-(Addr (CTownStreet (CTown #\S#\é) (CStreet #\P#\a#\r#\k)))
-
 "Sé, Park"
 (Addr (CTownStreet (CTown #\S#\é) (CStreet #\P#\a#\r#\k)))
 
@@ -211,6 +208,12 @@
 "Sé Ó út 1 M é  LY garázs"
 (Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (Type #\ú#\t) (NumberEnding (House (HouseNumber #\1) (BuildingN #\M)) (Locator #\L#\Y (LocatorType #\g#\a#\r#\á#\z#\s))))
 
+;"Sé Ó út 1 mélygarázs"
+;(Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (Type #\ú#\t) (HouseNumber #\1))
+
+;"Sé Ó út 1 mélygarázs -2 szint 3-4. sz parkolóhely"
+;(Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (Type #\ú#\t))
+
 "Sé Ó t. 1"
 (Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (Type #\t#\.) (HouseNumber #\1))
 
@@ -234,6 +237,9 @@
 
 "Sé Ó 1 2 / 3 ajtó"
 (Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\1) (LevelDoor (LevelN #\2) (DoorN #\3))))
+
+"Sé Ó 1. I./3."
+succeed
 
 "Sé Ó 4 A lház"
 (Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\4) (StairsL #\A)))
@@ -295,4 +301,72 @@
 "FA-LÓ út 4"
 (Addr (WStreet #\F#\A#\-#\L#\Ó) (Type #\ú#\t) (HouseNumber #\4))
 
+;"Sé Ó tér 1-2. számú Food Truck"
+;fail
+
+;"Sé Ó 1 Vár Torony"
+;fail
+
+;"Sé Ó út 4 (plaza) \"b-2\" jelű üzlet"
+;(Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (NumberEnding (Comment #\b#\o#\l#\t) (House (HouseNumber #\4)) (Locator #\b#\-#\2 (LocatorType #\ü#\z#\l#\e#\t))))
+
+;"Sé Ó út 1 MFSZ 2EM"
+;(succeed)
+
+;"Sé Ó út 4 FSZ3.em."
+;(succeed)
+
+; Szt. => Szent
+
+"ÚJVÁROS 11. B.LÉP. 2.EM. 5.AJTÓ"
+(Addr (WStreet #\Ú#\J#\V#\Á#\R#\O#\S) (House (HouseNumber #\1#\1) (StairsL #\B) (LevelDoor (LevelN #\2) (DoorN #\5))))
+
+; ==== ==== ==== ====
+; TODO these give an invalid parse:
+
+"Sé Park"
+(Addr (CTownStreet (CTown #\S#\é) (CStreet #\P#\a#\r#\k)))
+
+"Sé Ó T.u. 4"
+(Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó#\ #\T#\.)) (Type #\u#\.) (HouseNumber #\4))
+
+"Sé Ó T.u.4"
+(Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó#\ #\T#\.)) (Type #\u#\.) (HouseNumber #\4))
+
+"Sé Ó 1 2 . em 3."
+(Addr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\1) (LevelDoor (LevelN #\2) (DoorN #\3))))
+
+"BUDAPEST HEGY UTCA - KAMILLA UTCA 15"
+(succeed)
+
+; comment=All 4 U hotel
+"BUDAPEST HOLLÓ UTCA ALL 4 U HOTEL"
+(succeed)
+
+"Sé Ő lépcső 4"
+(succeed)
+
+
+;
+;"Sé, Piros Postakocsi, 1234+567 fkm jobb part 123"
+;Sé Ó út 0/b VÉGE a.
+;"Sé Ó út vége" => Comment "vége"
+;"Sé Ó út 012345/67. hrsz. (Fa út 1.)"
+;"Sé Ó út 2. (Plaza Üzletközpont)"
+;"Sé Ó u. 2.-Al Fa út 3."
+;"Sé Ó ltp. (Fa u.)"
+;"Sé Ó 4. - Plaza Park"
+;"Sé Ó út HRSZ: 0123/45"
+;"Sé 0123/45 hrsz"
+;"Sé Ó út 9 (1234/5 hrsz.)"
+;"Sé Ó út 9 (hrsz:1234/5)"
+;"Sé Ó 4 u. 3 em 2"
+;"Sé Ó út 4 u. 3 em 2"
+;MÁV 11-es őrház
+;Felsőgalambos 1. dűlő
+;Tóth 3. tanya
+;Tóth 3. tanya 1
+;Tóth 3. tanya 2
+;Fehértói halas 1 tanya
+;"1234 Sé, Ő utca 42. 2. emelet 3. ajtó"
 )
