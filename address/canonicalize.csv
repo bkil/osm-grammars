@@ -1,0 +1,27 @@
+Postcode; ;
+CTown; ;,
+UTown; ;,
+CStreet; ;
+UStreet; ;
+NCStreet; ;
+Type; ;
+HouseNumber; ;
+SubLetter;/;
+SubNumber;/;
+BuildingN; ; épület
+StairsR; ; lépcsőház
+StairsL; ; lépcsőház
+StairsN; ; lépcsőház
+Basement; ;alagsor
+Ground; ;földszint
+HighGround; ;magasföldszint
+HalfLevel; ;félemelet;
+Roof; ;tetőtér;
+LevelN; ;. emelet
+LevelR; ;. emelet
+DoorN; ;. ajtó
+Locator; ;
+LocatorType; ;
+ConscriptionHrsz; ; hrsz.
+ConscriptionNum; ; hrsz.
+Comment; (;)

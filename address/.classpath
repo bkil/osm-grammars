@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/usr/local/lib/waxeye-0.8.0/lib/waxeye.jar" sourcepath="/usr/local/src/waxeye-0.8.0/src/java"/>
+	<classpathentry kind="output" path="out"/>
+</classpath>
