@@ -327,6 +327,15 @@
 "1237 SÉ Ó út 42. KMSZ. 0123/45"
 (Addr (Postcode #\1#\2#\3#\7) (UTownStreet (UTown #\S#\É) (UStreet #\Ó)) (Type #\ú#\t) (Number (Km #\4#\2) (ConscriptionNum #\0#\1#\2#\3#\/#\4#\5)))
 
+"1212 Budapest, XXI, 21 Ó út 1"
+(Addr (Postcode #\1#\2#\1#\2) (CTownStreet (CTown #\B#\u#\d#\a#\p#\e#\s#\t) (CStreet #\Ó)) (Type #\ú#\t) (HouseNumber #\1))
+
+"1212 Budapest-XXI 21 Ó út 1"
+(Addr (Postcode #\1#\2#\1#\2) (CTownStreet (CTown #\B#\u#\d#\a#\p#\e#\s#\t) (CStreet #\Ó)) (Type #\ú#\t) (HouseNumber #\1))
+
+"1212 Budapest, XXI 1 Ó út 1"
+(Addr (Postcode #\1#\2#\1#\2) (CTownStreet (CTown #\B#\u#\d#\a#\p#\e#\s#\t) (CStreet #\X#\X#\I#\ #\1#\ #\Ó)) (Type #\ú#\t) (HouseNumber #\1))
+
 ; ==== ==== ==== ====
 ; TODO these give an invalid parse:
 

@@ -25,16 +25,39 @@ TownStreet <= UTownStreet | CTownStreet
 
 # Uppercase town and street
 UTownStreet <= UTown +Seps UStreet
-UTown <- Big +Big
+UTown <- 'BUDAPEST' +Seps District | Big +Big
 UStreet <- BigNum *BigNum *( +Sepn NotTypeNumber +BigNum) ?'.'
 
 # Camelcase or lowercase town and street
 CTownStreet <= CTown *Seps CStreet | CTown +Seps NCStreet
-CTown <- Big +Small
+CTown <- 'Budapest' +Seps District | Big +Small
 CStreet <- BigNum *BigSmallNum *( +Sepn NotTypeNumber +BigSmallNum) ?'.'
 NCStreet <- +BigSmallNum *( +Sepn NotTypeNumber +BigSmallNum) ?'.'
 
 NotTypeNumber <= !(?(Type *Seps) NumberEnding)
+
+District <:
+  'I' +Seps '1'
+  | 'II' +Seps '2'
+  | 'III' +Seps '3'
+  | 'IV' +Seps '4'
+  | 'V' +Seps '5'
+  | 'VI' +Seps '6'
+  | 'VII' +Seps '7'
+  | 'VIII' +Seps '8'
+  | 'IX' +Seps '9'
+  | 'X' +Seps '10'
+  | 'XI' +Seps '11'
+  | 'XII' +Seps '12'
+  | 'XIII' +Seps '13'
+  | 'XIV' +Seps '14'
+  | 'XV' +Seps '15'
+  | 'XVI' +Seps '16'
+  | 'XVII' +Seps '17'
+  | 'XVIII' +Seps '18'
+  | 'XIX' +Seps '19'
+  | 'XX' +Seps '20'
+  | 'XXI' +Seps '21'
 
 Number <=
   Km ?(+Seps Conscription)
