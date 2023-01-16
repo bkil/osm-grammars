@@ -372,6 +372,9 @@
 "1212 Budapest, XXI 1 Ó út 1"
 (StreetAddr (Postcode #\1#\2#\1#\2) (CTownStreet (CTown #\B#\u#\d#\a#\p#\e#\s#\t) (CStreet #\X#\X#\I#\ #\1#\ #\Ó)) (Type #\ú#\t) (HouseNumber #\1))
 
+"1012 Budapest, I, 01 Ó út 1"
+(StreetAddr (Postcode #\1#\0#\1#\2) (CTownStreet (CTown #\B#\u#\d#\a#\p#\e#\s#\t) (CStreet #\Ó)) (Type #\ú#\t) (HouseNumber #\1))
+
 ; ==== ==== ==== ====
 ; TODO these give an invalid parse:
 
