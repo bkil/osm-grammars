@@ -2,10 +2,18 @@
 # so I replaced it with  `?(?X *X ...)`.
 # Don't forget to follow nonterminals when you are checking against this.
 
-Addr <-
-  ?Seps *Seps ?FakePostcode ?(?(RepeatedPostcode +Seps) *(RepeatedPostcode +Seps) LastPostcode *Seps)
-  (WStreet | TownStreet)
+Addr <= StreetAddr | TownAddr
+
+TownAddr <=
+  Postcodes
+  (UTown | CTown)
+
+StreetAddr <=
+  (WStreet | Postcodes TownStreet)
   ?(+Sep Type) *Seps NumberEnding
+
+Postcodes <=
+  ?Seps *Seps ?FakePostcode ?(?(RepeatedPostcode +Seps) *(RepeatedPostcode +Seps) LastPostcode *Seps)
 
 WStreet <- (+Num | +Small *('-' +Small) | Big (*Big *('-' +Big) | *Small *('-' (*Small | Big *Small)))) ?'.'
 

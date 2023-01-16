@@ -1,20 +1,24 @@
 Postcode; ;
 CTown; ;,
 UTown; ;,
+WStreet; ;
 CStreet; ;
 UStreet; ;
 NCStreet; ;
 Type; ;
 HouseNumber; ;
+Km; ;. kmszelvény
 SubLetter;/;
 SubNumber;/;
 BuildingN; ; épület
 StairsR; ; lépcsőház
 StairsL; ; lépcsőház
 StairsN; ; lépcsőház
+Cellar; ;pince
 Basement; ;alagsor
 Ground; ;földszint
 HighGround; ;magasföldszint
+LowGround; ;mélyföldszint
 HalfLevel; ;félemelet;
 Roof; ;tetőtér;
 LevelN; ;. emelet
