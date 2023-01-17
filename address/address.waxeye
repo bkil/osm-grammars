@@ -22,7 +22,10 @@ WStreet <-
 
 NumberEnding <= ?Comment ?(Number ?Comment ?(?Sep *Sep Locator ?Comment)) *Seps !.
 
-Comment <- ?Seps *Seps (:(+'/') *(!'/' .) :(+'/') (+Seps | !.) | :('(') (Conscription | *(![()] .)) :(')') *Seps)
+Comment <= ?Seps *Seps (:(+'/') CommentSlash :(+'/') (+Seps | !.) | :('(') (Conscription | CommentParen) :(')') *Seps)
+
+CommentSlash <- *(!'/' .)
+CommentParen <- *(![()] .)
 
 FakePostcode <: '9999' +Seps
 

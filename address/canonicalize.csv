@@ -26,6 +26,8 @@ LevelR; ;. emelet
 DoorN; ;. ajtó
 Locator; ;
 LocatorType; ;
-ConscriptionHrsz; ; hrsz.
-ConscriptionNum; ; hrsz.
-Comment; (;)
+ConscriptionHrsz; (; hrsz.)
+ConscriptionNum; (; hrsz.)
+ConscriptionRev; (HRSZ.: ;)
+CommentParen; (;)
+CommentSlash; (;)

@@ -47,7 +47,7 @@
 (StreetAddr (CTownStreet (CTown #\Ő#\r) (CStreet #\F#\ő (Type #\ú#\t))) (Number (HouseNumber #\9) (ConscriptionHrsz #\2#\9#\5#\6#\/#\3)))
 
 "Őr Fő út (2956/3 hrsz) 9."
-(StreetAddr (CTownStreet (CTown #\Ő#\r) (CStreet #\F#\ő (Type #\ú#\t))) (NumberEnding (Comment (ConscriptionHrsz #\2#\9#\5#\6#\/#\3)) (HouseNumber #\9)))
+(StreetAddr (CTownStreet (CTown #\Ő#\r) (CStreet #\F#\ő (Type #\ú#\t))) (NumberEnding (ConscriptionHrsz #\2#\9#\5#\6#\/#\3) (HouseNumber #\9)))
 
 "Őr Május 1 utca 2"
 (StreetAddr (CTownStreet (CTown #\Ő#\r) (CStreet #\M#\á#\j#\u#\s#\ #\1 (Type #\u#\t#\c#\a))) (HouseNumber #\2))
@@ -176,16 +176,16 @@
 (StreetAddr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (NumberEnding (HouseNumber #\1) (Locator #\2 (LocatorType #\p#\a#\v#\.))))
 
 "Sé Ó /bolt// 1"
-(StreetAddr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (NumberEnding (Comment #\b#\o#\l#\t) (HouseNumber #\1)))
+(StreetAddr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (NumberEnding (CommentSlash #\b#\o#\l#\t) (HouseNumber #\1)))
 
 "Sé Ó u. (bolt) 1"
-(StreetAddr (CTownStreet (CTown #\S#\é) (CStreet #\Ó (Type #\u#\.))) (NumberEnding (Comment #\b#\o#\l#\t) (HouseNumber #\1)))
+(StreetAddr (CTownStreet (CTown #\S#\é) (CStreet #\Ó (Type #\u#\.))) (NumberEnding (CommentParen #\b#\o#\l#\t) (HouseNumber #\1)))
 
 "Sé Ó u./bolt/ 1"
-(StreetAddr (CTownStreet (CTown #\S#\é) (CStreet #\Ó (Type #\u#\.))) (NumberEnding (Comment #\b#\o#\l#\t) (HouseNumber #\1)))
+(StreetAddr (CTownStreet (CTown #\S#\é) (CStreet #\Ó (Type #\u#\.))) (NumberEnding (CommentSlash #\b#\o#\l#\t) (HouseNumber #\1)))
 
 "Sé Ó 1 (bolt)"
-(StreetAddr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (HouseNumber #\1 (Comment #\b#\o#\l#\t)))
+(StreetAddr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (HouseNumber #\1 (CommentParen #\b#\o#\l#\t)))
 
 "Sé Ó 1 /a"
 (StreetAddr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (HouseNumber #\1 (SubLetter #\a)))
@@ -197,16 +197,16 @@
 (StreetAddr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (HouseNumber #\1 (SubNumber #\2)))
 
 "Sé Ó 1/a /bolt/"
-(StreetAddr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\1 (SubLetter #\a)) (Comment #\b#\o#\l#\t)))
+(StreetAddr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\1 (SubLetter #\a)) (CommentSlash #\b#\o#\l#\t)))
 
 "Sé Ó 1 /bolt/"
-(StreetAddr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (HouseNumber #\1 (Comment #\b#\o#\l#\t)))
+(StreetAddr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (HouseNumber #\1 (CommentSlash #\b#\o#\l#\t)))
 
 "Sé Ó 1 (bolt) fszt"
-(StreetAddr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\1 (Comment #\b#\o#\l#\t)) (Ground)))
+(StreetAddr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\1 (CommentParen #\b#\o#\l#\t)) (Ground)))
 
 "Sé Ó 1 /bolt/ fszt"
-(StreetAddr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\1 (Comment #\b#\o#\l#\t)) (Ground)))
+(StreetAddr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\1 (CommentSlash #\b#\o#\l#\t)) (Ground)))
 
 "Sé Ó 1/D.  B.épület 2/3"
 (StreetAddr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\1 (SubLetter #\D)) (BuildingN #\B) (LevelDoor (LevelN #\2) (DoorN #\3))))
@@ -215,7 +215,7 @@
 (StreetAddr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\1 (SubLetter #\B)) (LevelDoor (LevelR #\I#\I#\I) (DoorN #\3))))
 
 "Sé Ó 1. (23456/7/A/8).fszt."
-(StreetAddr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\1 (Comment (ConscriptionNum #\2#\3#\4#\5#\6#\/#\7#\/#\A#\/#\8))) (Ground)))
+(StreetAddr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\1 (ConscriptionNum #\2#\3#\4#\5#\6#\/#\7#\/#\A#\/#\8)) (Ground)))
 
 "Sé Ó 1. fszt. 23456/7/A/8."
 (StreetAddr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (Number (House (HouseNumber #\1) (Ground)) (ConscriptionNum #\2#\3#\4#\5#\6#\/#\7#\/#\A#\/#\8)))
@@ -323,10 +323,10 @@
 (StreetAddr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (House (HouseNumber #\4) (LevelDoor (LowGround) (DoorN #\3))))
 
 "9999 2483 2483GárdonyMájus 1(2/3hrsz)4-5/a/szexshop// bé.clh6/7V8üzlet"
-(StreetAddr (Postcode #\2#\4#\8#\3) (CTownStreet (CTown #\G#\á#\r#\d#\o#\n#\y) (CStreet #\M#\á#\j#\u#\s#\ #\1)) (NumberEnding (Comment (ConscriptionHrsz #\2#\/#\3)) (House (HouseNumber #\4#\-#\5 (SubLetter #\a)) (Comment #\s#\z#\e#\x#\s#\h#\o#\p) (BuildingN #\b) (StairsL #\c) (LevelDoor (LevelN #\6) (DoorN #\7))) (Locator #\V#\8 (LocatorType #\ü#\z#\l#\e#\t))))
+(StreetAddr (Postcode #\2#\4#\8#\3) (CTownStreet (CTown #\G#\á#\r#\d#\o#\n#\y) (CStreet #\M#\á#\j#\u#\s#\ #\1)) (NumberEnding (ConscriptionHrsz #\2#\/#\3) (House (HouseNumber #\4#\-#\5 (SubLetter #\a)) (CommentSlash #\s#\z#\e#\x#\s#\h#\o#\p) (BuildingN #\b) (StairsL #\c) (LevelDoor (LevelN #\6) (DoorN #\7))) (Locator #\V#\8 (LocatorType #\ü#\z#\l#\e#\t))))
 
 "Fa út 4 (FaUt.hu bolt)"
-(StreetAddr (WStreet #\F#\a (Type #\ú#\t)) (HouseNumber #\4 (Comment #\F#\a#\U#\t#\.#\h#\u#\ #\b#\o#\l#\t)))
+(StreetAddr (WStreet #\F#\a (Type #\ú#\t)) (HouseNumber #\4 (CommentParen #\F#\a#\U#\t#\.#\h#\u#\ #\b#\o#\l#\t)))
 
 "FA út 4"
 (StreetAddr (WStreet #\F#\A (Type #\ú#\t)) (HouseNumber #\4))
@@ -344,7 +344,7 @@
 ;fail
 
 ;"Sé Ó út 4 (plaza) \"b-2\" jelű üzlet"
-;(StreetAddr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (NumberEnding (Comment #\b#\o#\l#\t) (House (HouseNumber #\4)) (Locator #\b#\-#\2 (LocatorType #\ü#\z#\l#\e#\t))))
+;(StreetAddr (CTownStreet (CTown #\S#\é) (CStreet #\Ó)) (NumberEnding (CommentSlash #\b#\o#\l#\t) (House (HouseNumber #\4)) (Locator #\b#\-#\2 (LocatorType #\ü#\z#\l#\e#\t))))
 
 ;"Sé Ó út 1 MFSZ 2EM"
 ;(succeed)
@@ -358,7 +358,7 @@
 (StreetAddr (WStreet #\Ú#\J#\V#\Á#\R#\O#\S) (House (HouseNumber #\1#\1) (StairsL #\B) (LevelDoor (LevelN #\2) (DoorN #\5))))
 
 "1237 SÉ Ó út 42. KMSZ. (0123/45)"
-(StreetAddr (Postcode #\1#\2#\3#\7) (UTownStreet (UTown #\S#\É) (UStreet #\Ó (Type #\ú#\t))) (NumberEnding (Km #\4#\2) (Comment (ConscriptionNum #\0#\1#\2#\3#\/#\4#\5))))
+(StreetAddr (Postcode #\1#\2#\3#\7) (UTownStreet (UTown #\S#\É) (UStreet #\Ó (Type #\ú#\t))) (NumberEnding (Km #\4#\2) (ConscriptionNum #\0#\1#\2#\3#\/#\4#\5)))
 
 "1237 SÉ Ó út 42. KMSZ. 0123/45"
 (StreetAddr (Postcode #\1#\2#\3#\7) (UTownStreet (UTown #\S#\É) (UStreet #\Ó (Type #\ú#\t))) (Number (Km #\4#\2) (ConscriptionNum #\0#\1#\2#\3#\/#\4#\5)))
@@ -445,6 +445,9 @@
 (TownAddr (Postcode #\1#\2#\3#\4) (CTown #\S#\é) (ConscriptionHrsz #\1#\2#\/#\3))
 
 "Sé, HRSZ: 12/3."
+(StreetAddr (WStreet #\S#\é) (ConscriptionRev #\1#\2#\/#\3))
+
+"Sé, (HRSZ.: 12/3)"
 (StreetAddr (WStreet #\S#\é) (ConscriptionRev #\1#\2#\/#\3))
 
 "1234 Sé, HRSZ.: 12/3."
