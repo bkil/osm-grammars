@@ -7,15 +7,18 @@ Addr <= StreetAddr | TownAddr
 TownAddr <=
   Postcodes
   (UTown | CTown)
+  *Seps ?Conscription
 
 StreetAddr <=
   (WStreet | Postcodes TownStreet)
-  ?(+Sep Type) *Seps NumberEnding
+  *Seps NumberEnding
 
 Postcodes <=
   ?Seps *Seps ?FakePostcode ?(?(RepeatedPostcode +Seps) *(RepeatedPostcode +Seps) LastPostcode *Seps)
 
-WStreet <- (+Num | +Small *('-' +Small) | Big (*Big *('-' +Big) | *Small *('-' (*Small | Big *Small)))) ?'.'
+WStreet <-
+  (+Num | +Small *('-' +Small) | Big (*Big *('-' +Big) | *Small *('-' (*Small | Big *Small))))
+  ?(('.' *Sep | +Sep) ?Type)
 
 NumberEnding <= ?Comment ?(Number ?Comment ?(?Sep *Sep Locator ?Comment)) *Seps !.
 
@@ -34,13 +37,13 @@ TownStreet <= UTownStreet | CTownStreet
 # Uppercase town and street
 UTownStreet <= UTown +Seps UStreet
 UTown <- 'BUDAPEST' +Seps District | Big +Big
-UStreet <- BigNum *BigNum *( +Sepn NotTypeNumber +BigNum) ?'.'
+UStreet <- BigNum *BigNum *( +Sepn NotTypeNumber +BigNum) ?(('.' *Sep | +Sep) ?Type)
 
 # Camelcase or lowercase town and street
 CTownStreet <= CTown *Seps CStreet | CTown +Seps NCStreet
 CTown <- 'Budapest' +Seps District | Big +Small
-CStreet <- BigNum *BigSmallNum *( +Sepn NotTypeNumber +BigSmallNum) ?'.'
-NCStreet <- +BigSmallNum *( +Sepn NotTypeNumber +BigSmallNum) ?'.'
+CStreet <- BigNum *BigSmallNum *( +Sepn NotTypeNumber +BigSmallNum) ?(('.' *Sep | +Sep) ?Type)
+NCStreet <- +BigSmallNum *( +Sepn NotTypeNumber +BigSmallNum) ?(('.' *Sep | +Sep) ?Type)
 
 NotTypeNumber <= !(?(Type *Seps) NumberEnding)
 
@@ -69,8 +72,8 @@ District <:
 
 Number <=
   Km ?(+Seps Conscription)
+  | !(ConscriptionHrsz !.) House ?(+Seps Conscription)
   | Conscription
-  | House ?(+Seps Conscription)
   | :('(') Conscription :(')') *Seps House
 
 Km <- [1-9] *Num :(+Sepd "km" ?(?Sep *Sep "szelvény" | "sz"))
@@ -102,15 +105,15 @@ LevelDoor <=
   | ?(?Sepd *Sepd Level) ?Sepd *Sepd DoorN !(LocatorEnd !.) ?DoorSuf
 
 HouseNumber <-
-  [1-9] ?Num ?Num
-  ?(?Sep *Sep '-' *Sep [1-9] ?Num ?Num)
+  [1-9] ?Num ?Num !Num
+  ?(?Sep *Sep '-' *Sep [1-9] ?Num ?Num !Num)
   ?(+Seps Comment)
   ?SubNumberOrLetter
   :(?(?Sepd *Sepd "sz" ('.' | "ám")))
 
 SubNumberOrLetter <=
   ?Sepd *Sepd :([/-]) *Sep SubLetter
-  | ?Sepd *Sepd :('/') *Sep SubNumber
+  | ?Sepd *Sepd :('/') *Sep SubNumber !Num
   | ?Sepd *Sepd SubLetter &(Sepd | !.) !(BuildingSuf | StairsSuf | LevelSuf)
 
 SubNumber <- [1-9] | [1-9] Num
@@ -141,7 +144,7 @@ LevelR <- +[ivx] | +[IVX]
 DoorN <- !Conscription Num ?Num ?Num
 DoorSuf <: !(LocatorEnd !.) ?'.' *Sep ("a" ?("jt" ?"ó") | "sz" ?('.' | "ám") | '-' [eEaAöÖoO] "s " ?"kapu" "csengő")
 
-Conscription <= ConscriptionHrsz | ConscriptionNum
+Conscription <= ConscriptionRev | ConscriptionHrsz | ConscriptionNum
 
 ConscriptionNum <-
   ( Num Num Num +Num '/' +Num ?('/' Big ?('/' Num))
@@ -153,6 +156,11 @@ ConscriptionNum <-
 ConscriptionHrsz <-
   +Num ?('/' +Num *('/' +BigSmallNum))
   :(?(?Sep *Sep '.') *Sep "hrsz" ?'.')
+
+ConscriptionRev <-
+  :(("hrsz" | "HRSZ" ) ?'.' ?':' *Sep)
+  +Num ?('/' +Num *('/' +BigSmallNum))
+  *Seps
 
 Locator <- +(!LocatorType (BigSmallNum | '-')) LocatorEnd
 LocatorEnd <= :(?(+[ \t.] "sz" ?"ámú")) *Sepd LocatorType
